@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Онлайн радиостанция</title>
+  <style>
+    .radio-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .radio-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .radio-controls {
+      margin-top: 20px;
+    }
+    .radio-controls button {
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="radio-container">
+    <div class="radio-title">Сейчас играет:</div>
+    <div id="current-track"></div>
+    <div class="radio-title">Следующий трек:</div>
+    <div id="next-track"></div>
+    <div class="radio-controls">
+      <button onclick="playPrevious()">Назад</button>
+      <button onclick="playNext()">Вперед</button>
+    </div>
+  </div>
+
+  <script>
+    // Массив треков и времени следующего проигрывания
+    var tracks = [
+      { title: 'Шлягеры', url: 'https://www.youtube.com/watch?v=rEhs40YYJ6Y', nextPlayTime: '10:00' },
+      { title: 'Шопен', url: 'https://www.youtube.com/watch?v=dWtJuxU1S-A', nextPlayTime: '12:30' },
+      { title: 'Флейта', url: 'https://www.youtube.com/watch?v=HlZIpqnfMIY', nextPlayTime: '15:15' },
+      // Добавьте больше треков по аналогии
+    ];
+
+    var currentTrackIndex = 0;
+
+    // Функция для проигрывания предыдущего трека
+    function playPrevious() {
+      currentTrackIndex--;
+      if (currentTrackIndex < 0) {
+        currentTrackIndex = tracks.length - 1;
+      }
+      playTrack();
+    }
+
+    // Функция для проигрывания следующего трека
+    function playNext() {
+      currentTrackIndex++;
+      if (currentTrackIndex >= tracks.length) {
+        currentTrackIndex = 0;
+      }
+      playTrack();
+    }
+
+    // Функция для проигрывания трека
+    function playTrack() {
+      var currentTrack = tracks[currentTrackIndex];
+      document.getElementById('current-track').textContent = currentTrack.title;
+      document.getElementById('next-track').textContent = tracks[(currentTrackIndex + 1) % tracks.length].title;
+
+      // Здесь вы можете добавить код для проигрывания трека воспроизводящим устройством,
+      // например, встроенным плеером YouTube или другим HTML5 аудио/видео плеером.
+      // Вы можете использовать currentTrack.url для получения URL-адреса трека.
+
+      // После проигрывания текущего трека можно запланировать следующее проигрывание
+      setTimeout(playNext, getMillisecondsUntilNextPlay(currentTrack.nextPlayTime));
+    }
+
+    // Вспомогательная функция для вычисления количества м    // Вспомогательная функция для вычисления количества миллисекунд до следующего проигрывания
+    function getMillisecondsUntilNextPlay(nextPlayTime) {
+      var currentTime = new Date();
+      var [hours, minutes] = nextPlayTime.split(':');
+      var nextPlayDate = new Date();
+      nextPlayDate.setHours(hours);
+      nextPlayDate.setMinutes(minutes);
+      nextPlayDate.setSeconds(0);
+
+      var millisecondsUntilNextPlay = nextPlayDate - currentTime;
+      if (millisecondsUntilNextPlay < 0) {
+        // Если следующее время проигрывания уже прошло, добавляем 24 часа для следующего дня
+        millisecondsUntilNextPlay += 24 * 60 * 60 * 1000;
+      }
+
+      return millisecondsUntilNextPlay;
+    }
+
+    // Начинаем проигрывание первого трека
+    playTrack();
+  </script>
+</body>
+</html>
