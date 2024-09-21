@@ -8,7 +8,5 @@ title: Радио
   <!-- Овальная кнопка для перехода на /live -->
   <div id="startButton" class="oval-button" onclick="window.location.href='/live'">
     <div class="triangle"></div>
+    {% include footer.html %}
   </div>
-
-
-<p>{% include footer.html %}</p>
