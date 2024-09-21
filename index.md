@@ -5,18 +5,10 @@ title: Радио
   <!-- Основной градиентный фон -->
   <div class="gradient"></div>
 
-  <!-- Овальная кнопка для запуска программы -->
-  <div id="startButton" class="oval-button" onclick="startProgram()">
+  <!-- Овальная кнопка для перехода на /live -->
+  <div id="startButton" class="oval-button" onclick="window.location.href='/live'">
     <div class="triangle"></div>
   </div>
 
-  <!-- Аудиоплеер, скрытый по умолчанию -->
-  <audio id="audioPlayer" controls></audio>
 
-  <!-- Контейнер для отображения содержимого файла schedule.html -->
-  <div id="scheduleContainer" style="display: none;">
-    {% include schedule.html %}
-  </div>
-
-  <!-- Подключение скрипта -->
-  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+<p>{% include footer.html %}</p>
