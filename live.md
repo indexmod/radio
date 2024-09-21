@@ -3,17 +3,6 @@ layout: cover
 title: Эфир
 permalink: live
 ---
-  <!-- Основной градиентный фон -->
-  <div class="gradient"></div>
-
-  <!-- Аудиоплеер, скрытый по умолчанию -->
-  <audio id="audioPlayer" controls></audio>
-
-  ---
-  layout: cover
-  title: Эфир
-  permalink: live
-  ---
 
   <!-- Основной градиентный фон -->
   <div class="gradient"></div>
@@ -29,7 +18,7 @@ permalink: live
       {% unless page.exclude %}
         <div class="program-card">
           <!-- Отображение обложки программы -->
-          <img src="{{ page.cover | default: '/images{{ page.permalink }}.gif' }}" alt="{{ page.title }} обложка" class="program-cover">
+          <img src="{{ page.cover }}">
           <!-- Название программы -->
           <h3>{{ page.title }}</h3>
           <!-- Время старта программы -->
