@@ -6,7 +6,7 @@ title: Радио
   <div class="gradient"></div>
 
   <!-- Овальная кнопка для перехода на /live -->
-  <div id="startButton" class="oval-button" onclick="window.location.href='/radio-g/live'">
+  <div id="startButton" class="oval-button" onclick="window.location.href='/{{ site.baseurl }}/live'">
     <div class="triangle"></div>
   </div>
 
