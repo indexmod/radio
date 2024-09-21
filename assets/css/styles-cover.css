@@ -26,7 +26,15 @@ body, html {
   border-radius: 10px;
   padding: 15px;
   background-color: transparent;
-  text-align: center;
+  text-align: left;
+  font-family: Monaco, monospace; /* Шрифт */
+  font-size: 12px; /* Размер шрифта */
+  color: black; /* Цвет текста */
+}
+
+.program_time
+{
+  font-size: 15px; /* Размер шрифта */
 }
 
 /* Стили для параграфов */
