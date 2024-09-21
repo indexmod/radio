@@ -18,7 +18,7 @@ permalink: live
       {% unless page.exclude %}
         <div class="program-card">
           <!-- Время программы -->
-          <p id="program_time">{{ page.start_time }}</p>
+          <p class="program_time">{{ page.start_time }}</p>
           <!-- Название программы Ссылка на страницу программы -->
           <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
         </div>
