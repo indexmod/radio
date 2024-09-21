@@ -17,14 +17,11 @@ permalink: live
     {% for page in mypages %}
       {% unless page.exclude %}
         <div class="program-card">
-          <!-- Отображение обложки программы -->
-          <img src="{{ page.cover }}">
           <!-- Название программы -->
-          <h3>{{ page.title }}</h3>
-          <!-- Время старта программы -->
-          <p>Время старта: {{ page.start_time }}</p>
+          <p>{{ page.start_time }}</p>
+          <!-- Название программы -->
           <!-- Ссылка на страницу программы -->
-          <a href="{{ page.url }}" class="program-link">Подробнее</a>
+          <a href="{{ page.permalink }}">{{ page.title }}</a>
         </div>
       {% endunless %}
     {% endfor %}
