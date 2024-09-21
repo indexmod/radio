@@ -97,47 +97,6 @@ audio {
   max-height: 80vh; /* Ограничьте высоту контейнера для прокрутки */
 }
 
-/* Стили для таблицы расписания */
-#scheduleTable {
-  width: 100%;
-  max-width: 800px;
-  border-collapse: collapse; /* Убираем промежутки между границами */
-  background-color: transparent; /* Прозрачный фон */
-  font-family: Monaco, monospace;
-  font-size: 12px; /* Уменьшаем размер шрифта до 12px */
-  color: black;
-}
-
-/* Ячейки таблицы */
-#scheduleTable td {
-  position: relative; /* Ячейка становится относительным контейнером */
-  border-top: 1px solid black; /* Горизонтальные границы */
-  padding: 10px;
-  text-align: left; /* Выравнивание текста по левому краю */
-  vertical-align: top; /* Выравнивание текста по верхнему краю */
-}
-
-/* Исключаем верхнюю и нижнюю границы таблицы */
-#scheduleTable tr:first-child td {
-  border-top: none;
-}
-
-#scheduleTable tr:last-child td {
-  border-bottom: none;
-}
-
-.blinking-circle {
-  position: absolute; /* Абсолютное позиционирование внутри ячейки */
-  top: 20%; /* Выровнять по вертикали */
-  left: 0%; /* Выровнять по горизонтали */
-  transform: translate(-50%, -50%); /* Центрируем */
-  width: 25px; /* Размер кружка */
-  height: 25px;
-  background-color: white;
-  border-radius: 50%; /* Круглая форма */
-  animation: blink 5s infinite; /* Анимация мигания */
-}
-
 @keyframes blink {
   0% {
     opacity: 1;
@@ -147,18 +106,6 @@ audio {
   }
   100% {
     opacity: 1;
-  }
-}
-
-/* Адаптивная таблица для маленьких экранов */
-@media (max-width: 600px) {
-  #scheduleTable {
-    display: block; /* Превращаем таблицу в блок */
-  }
-  #scheduleTable td {
-    display: block; /* Ячейки становятся блоками */
-    width: 100%;
-    border: 0px; /* Для маленьких экранов можно добавить боковые границы */
   }
 }
 

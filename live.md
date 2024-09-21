@@ -17,10 +17,9 @@ permalink: live
     {% for page in mypages %}
       {% unless page.exclude %}
         <div class="program-card">
-          <!-- Название программы -->
+          <!-- Время программы -->
           <p>{{ page.start_time }}</p>
-          <!-- Название программы -->
-          <!-- Ссылка на страницу программы -->
+          <!-- Название программы Ссылка на страницу программы -->
           <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
         </div>
       {% endunless %}
