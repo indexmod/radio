@@ -12,6 +12,17 @@ body, html {
   align-items: center;
 }
 
+
+/* Стили для параграфов */
+p {
+  position: relative; /* Относительное позиционирование */
+  padding: 10px; /* Отступы внутри параграфа */
+  font-family: Monaco, monospace; /* Шрифт */
+  font-size: 12px; /* Размер шрифта */
+  color: black; /* Цвет текста */
+}
+
+
 /* Анимация градиента фона */
 .gradient {
   position: absolute;
