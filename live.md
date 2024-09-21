@@ -9,14 +9,12 @@ permalink: live
   <!-- Аудиоплеер, скрытый по умолчанию -->
   <audio id="audioPlayer" controls></audio>
 
-  + This page animation performed best in Google Chrome and Firefox
-
   <wrap>
   {% assign mypages = site.html_pages | sort: "order" %}
   {% for page in mypages %}
   {% unless page.exclude %}
   <figure>
-  <a href="{{ page.permalink | absolute_url }}">/images/{{page.permalink}}.gif</a>
+  <a href="{{ page.permalink | absolute_url }}">/images{{page.permalink}}.gif</a>
   <figcaption>
   <p class="shortname">{{page.title}}</p></figcaption>
   </figure>
