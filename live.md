@@ -16,7 +16,7 @@ permalink: live
   {% for page in mypages %}
   {% unless page.exclude %}
   <figure>
-  <a href="{{ page.permalink | absolute_url }}">{{page.permalink}}.gif</a>
+  <a href="{{ page.permalink | absolute_url }}">/images/{{page.permalink}}.gif</a>
   <figcaption>
   <p class="shortname">{{page.title}}</p></figcaption>
   </figure>
