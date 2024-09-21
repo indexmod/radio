@@ -10,4 +10,4 @@ title: Радио
     <div class="triangle"></div>
   </div>
 
-      {% include footer.html %}
+  {% include footer.html %}
