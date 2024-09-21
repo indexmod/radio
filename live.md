@@ -12,7 +12,7 @@ permalink: live
   + This page animation performed best in Google Chrome and Firefox
 
   <wrap>
-  {% assign mypages = site.html_pages | sort: "start_time" %}
+  {% assign mypages = site.html_pages | sort: "order" %}
   {% for page in mypages %}
   {% unless page.exclude %}
   <figure>
