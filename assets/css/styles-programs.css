@@ -1,0 +1,80 @@
+/* Общие стили */
+body {
+    max-width: 100%;
+    margin: 3% 3% 0 3%;
+    padding: 0;
+    background: black;
+    color: white;
+}
+
+p, h3, h4, h5, h6, li, ul {
+    font-family: 'Monaco', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+em {
+    color: green;
+}
+
+h1, h2 {
+    font-size: 3em;
+    font-family: Georgia, serif;
+}
+
+a.one:link, a.one:visited, a.one:hover,
+a:link, a:visited, a:hover, a:active {
+    color: #4e80d8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a.one:hover,
+a:hover {
+    color: green;
+}
+
+/* Респонсивные стили для всех типов экранов */
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 5% auto; /* Центрировать содержимое */
+        padding: 0 5%; /* Добавить отступы сбоку */
+    }
+
+
+
+    p, h1, h2, h3, h4, h5, h6, li, ul {
+        font-size: 1.4em; /* Увеличить размер шрифта */
+        line-height: 1.8; /* Увеличить интервал между строками */
+    }
+
+    /* Дополнительные корректировки для улучшения отображения на всех устройствах */
+    * {
+        box-sizing: border-box; /* Учесть размер границ и отступов в общей ширине элементов */
+    }
+}
+
+img {
+    width: 100px;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+/* Скрываем аудиоплеер */
+#audio-player {
+  display: none;
+}
+
+/* Обеспечиваем респонсивность */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Добавим стили для адаптивности */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+}
