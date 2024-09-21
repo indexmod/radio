@@ -32,9 +32,9 @@ body, html {
   color: black; /* Цвет текста */
 }
 
-.program_time
-{
-  font-size: 20px; /* Размер шрифта */
+.program_time {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* Стили для параграфов */
@@ -138,14 +138,14 @@ a:active {
   color: black; /* Черный цвет для активных ссылок */
 }
 
-/* Стиль для инклюда, который будет по центру над нижним краем страницы */
 footer {
-  bottom: 20px; /* Отступ от нижнего края страницы */
-  width: 500px; /* Фиксированная ширина */
-  left: 50%; /* Центрирование по горизонтали */
-  transform: translateX(-50%); /* Чтобы центрировать сам блок относительно страницы */
-  text-align: center; /* Выравнивание текста по центру */
-  background-color: transparent; /* Прозрачный фон */
-  padding: 10px; /* Отступы вокруг контента */
-  z-index: 1; /* Устанавливаем, чтобы инклюд находился над фоном */
+  position: absolute;
+  bottom: 20px;
+  width: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: transparent;
+  padding: 10px;
+  z-index: 1;
 }
