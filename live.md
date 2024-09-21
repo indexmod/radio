@@ -21,7 +21,7 @@ permalink: live
           <p>{{ page.start_time }}</p>
           <!-- Название программы -->
           <!-- Ссылка на страницу программы -->
-          <a href="{{ page.permalink }}">{{ page.title }}</a>
+          <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
         </div>
       {% endunless %}
     {% endfor %}
