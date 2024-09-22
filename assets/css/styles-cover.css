@@ -22,8 +22,20 @@ body, html {
 /* Класс для мигающего текста */
 .blinking-text {
   animation: blink 1s infinite;
-  color: red; /* Вы можете задать любой цвет */
+  color: black;          /* Черный цвет текста */
+  font-family: Monaco, monospace; /* Шрифт Monaco */
+  font-size: 40px;       /* Размер шрифта 40px */
+  text-transform: uppercase; /* Эффект капслока */
 }
+
+/* Стили для всех h1 без мигания */
+h1 {
+  color: black;          /* Черный цвет текста */
+  font-family: Monaco, monospace; /* Шрифт Monaco */
+  font-size: 40px;       /* Размер шрифта 40px */
+  text-transform: uppercase; /* Эффект капслока */
+}
+
 
 
 .programs-grid {
