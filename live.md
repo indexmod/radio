@@ -12,6 +12,9 @@ permalink: live
   <img src="{{ site.baseurl }}/images/button.png" alt="Toggle Button" />
 </button>
 
+<script src="{{ site.baseurl }}/asserts/js/script.js"></script>
+
+
   <!-- Аудиоплеер, скрытый по умолчанию -->
   <audio id="audioPlayer" controls></audio>
 
