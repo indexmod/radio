@@ -3,6 +3,10 @@ layout: cover
 title: Эфир
 permalink: live
 ---
+<!-- Кнопка с треугольником -->
+<button class="circle-button">
+    <div class="triangle"></div>
+</button>
 
   <!-- Основной градиентный фон -->
   <div class="gradient"></div>
