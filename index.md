@@ -1,7 +1,6 @@
 ---
 layout: cover
-title: Эфир
-permalink: live
+title: Радио
 ---
 
   <!-- Основной градиентный фон -->
