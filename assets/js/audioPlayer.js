@@ -1,18 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
   const audioPlayer = document.getElementById('audioPlayer');
-
-  // Найдем все карточки программ
   const programCards = document.querySelectorAll('.program-card');
+  const currentMinute = new Date().getMinutes();
 
-  // Добавим обработчик клика на каждую карточку
-  programCards.forEach(card => {
-    card.addEventListener('click', function () {
-      // Найдем скрытую строку с аудиофайлом
-      const audioFile = card.querySelector('.audio-file').innerText;
+  // Функция для запуска аудиофайла с текущей минуты
+  function playAudio(audioFile) {
+    // Установим источник аудиофайла
+    audioPlayer.src = audioFile;
 
-      // Установим источник аудиоплеера и запустим воспроизведение
-      audioPlayer.src = audioFile;
+    // Ждем, пока метаданные загрузятся, чтобы установить текущее время
+    audioPlayer.addEventListener('loadedmetadata', function () {
+      // Если длительность известна, устанавливаем текущее время для воспроизведения с нужной минуты
+      if (audioPlayer.duration > 0) {
+        const startTime = currentMinute * 60; // Переводим минуты в секунды
+        if (startTime < audioPlayer.duration) {
+          audioPlayer.currentTime = startTime;
+        }
+      }
       audioPlayer.play();
     });
+
+    // Загружаем и начинаем воспроизведение
+    audioPlayer.load();
+  }
+
+  // Добавляем обработчик клика на любую часть страницы
+  document.body.addEventListener('click', function () {
+    // Найдем первый аудиофайл (первую скрытую ссылку)
+    const firstAudioFile = document.querySelector('.audio-file').href;
+
+    if (firstAudioFile) {
+      playAudio(firstAudioFile);
+    }
   });
 });
