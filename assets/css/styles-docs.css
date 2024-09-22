@@ -6,17 +6,27 @@
 }
 
 body, html {
+  height: 100%;                   /* Заполнение всей высоты */
   font-family: Monaco, monospace; /* Шрифт для всего текста */
   font-size: 30px;                /* Размер шрифта 30px */
   color: black;                   /* Цвет текста */
   line-height: 1.5;               /* Высота строки */
   padding: 20px;                  /* Отступы вокруг текста */
-  background: linear-gradient(45deg, silver, grey); /* Градиентный фон */
+  background: linear-gradient(45deg, silver, grey); /* Начальный градиентный фон */
+  background-size: 400% 400%;     /* Увеличенный размер градиента для анимации */
+  animation: gradientChange 5s ease infinite; /* Анимация градиента */
+}
+
+@keyframes gradientChange {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Заголовки */
 h1, h2, h3 {
   margin-bottom: 15px;           /* Отступ снизу заголовков */
+  font-size: 30px;               /* Размер заголовков 30px */
 }
 
 /* Параграфы */
