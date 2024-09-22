@@ -28,34 +28,35 @@ body, html {
   text-transform: uppercase; /* Эффект капслока */
 }
 
-/* Стили для всех h1 без мигания */
-h1 {
-  color: black;          /* Черный цвет текста */
-  font-family: Monaco, monospace; /* Шрифт Monaco */
-  font-size: 40px;       /* Размер шрифта 40px */
-  text-transform: uppercase; /* Эффект капслока */
+/* Стили для заголовков h1 и h2 */
+h1, h2 {
+  font-family: Monaco, monospace;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 10px;
 }
 
-
-
+/* Контейнер для карточек и заголовков */
 .programs-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: block; /* Изменение структуры на блочную */
+  width: 100%;
+  max-width: 600px;
   padding: 20px;
+  text-align: left; /* Выровнять заголовки и карточки по левому краю */
 }
 
+/* Стили для карточек программ */
 .program-card {
-  width: 250px;
   border: 1px solid black;
   border-radius: 10px;
   padding: 15px;
   background-color: transparent;
+  margin-bottom: 20px;
+  font-family: Monaco, monospace;
+  font-size: 12px;
+  color: black;
   text-align: left;
-  font-family: Monaco, monospace; /* Шрифт */
-  font-size: 12px; /* Размер шрифта */
-  color: black; /* Цвет текста */
 }
 
 .program_time {
@@ -65,18 +66,17 @@ h1 {
 
 /* Стили для параграфов */
 p {
-  padding: 10px; /* Отступы внутри параграфа */
-  font-family: Monaco, monospace; /* Шрифт */
-  font-size: 12px; /* Размер шрифта */
-  color: black; /* Цвет текста */
+  padding: 10px;
+  font-family: Monaco, monospace;
+  font-size: 12px;
+  color: black;
 }
-
 
 /* Анимация градиента фона */
 .gradient {
   position: absolute;
   width: 100%;
-  height: 100vh; /* Установите высоту на 100% высоты окна */
+  height: 100vh;
   background: linear-gradient(45deg, silver, grey);
   background-size: 400% 400%;
   animation: gradientChange 5s ease infinite;
@@ -96,7 +96,6 @@ p {
   border: 2px solid black;
   border-radius: 50px;
   background-color: transparent;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,7 +109,7 @@ p {
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 25px solid black; /* Треугольник повёрнут */
+  border-top: 25px solid black;
   transform: rotate(-90deg); /* Поворачиваем треугольник на 90 градусов */
 }
 
@@ -124,46 +123,28 @@ audio {
   display: flex;
   justify-content: left;
   align-items: left;
-  padding: 20px; /* Поля вокруг таблицы */
-  margin: 20px; /* Добавим одинаковые поля вокруг контейнера */
-  max-width: 90%; /* Ограничим ширину контейнера */
-  overflow-y: auto; /* Позволяет прокручивать содержимое */
-  max-height: 80vh; /* Ограничьте высоту контейнера для прокрутки */
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  padding: 20px;
+  margin: 20px;
+  max-width: 90%;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 /* Стили для ссылок */
 a {
-  color: black; /* Всегда черный цвет текста */
-  text-decoration: none; /* Убираем подчеркивание */
+  color: black;
+  text-decoration: none;
 }
 
-/* Стили при наведении */
 a:hover {
-  color: black; /* Черный цвет при наведении */
-  text-decoration: none; /* Добавляем подчеркивание при наведении */
+  text-decoration: underline;
 }
 
-/* Стили для активных и посещенных ссылок */
-a:visited {
-  color: black; /* Черный цвет для посещенных ссылок */
+a:visited, a:active {
+  color: black;
 }
 
-a:active {
-  color: black; /* Черный цвет для активных ссылок */
-}
-
+/* Footer стили */
 footer {
   position: absolute;
   bottom: 20px;
