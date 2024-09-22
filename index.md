@@ -56,7 +56,7 @@ title: Радио
   <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
 
   <!-- Скрытая строка с аудиофайлом -->
-  <span class="audio-file" style="display: none;">{{ page.audio_file }}</span>
+  <span class="audio-file" style="display: none;">{{ site.baseurl }}{{ page.audio_file }}</span>
 </div>
       {% endif %}
     {% endfor %}
