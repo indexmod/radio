@@ -51,7 +51,7 @@ p {
   position: absolute;
   width: 100%;
   height: 100vh; /* Установите высоту на 100% высоты окна */
-  background: linear-gradient(45deg, red, yellow);
+  background: linear-gradient(45deg, silver, grey);
   background-size: 400% 400%;
   animation: gradientChange 5s ease infinite;
   z-index: -1; /* Градиент находится под кнопкой и таблицей */
