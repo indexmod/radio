@@ -3,13 +3,14 @@ layout: cover
 title: Эфир
 permalink: live
 ---
-<!-- Кнопка с треугольником -->
-<button class="circle-button">
-    <div class="triangle"></div>
-</button>
 
   <!-- Основной градиентный фон -->
   <div class="gradient"></div>
+
+  <!-- Кнопка для скрытия/показа контента -->
+<button id="toggleButton" class="button-toggle">
+  <img src="{{ site.baseurl }}/images/button.png" alt="Toggle Button" />
+</button>
 
   <!-- Аудиоплеер, скрытый по умолчанию -->
   <audio id="audioPlayer" controls></audio>
