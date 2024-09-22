@@ -89,23 +89,6 @@ p {
   100% { background-position: 0% 50%; }
 }
 
-/* Стили для кнопки скрытия/показа контента */
-.button-toggle {
-  width: 50px; /* Ширина кнопки */
-  height: 50px; /* Высота кнопки */
-  border: 2px solid black; /* Обводка кнопки */
-  border-radius: 5px; /* Закругление углов */
-  background-color: transparent; /* Прозрачный фон */
-  display: flex; /* Используем флекс для центрирования текста */
-  justify-content: center; /* Центрируем текст по горизонтали */
-  align-items: center; /* Центрируем текст по вертикали */
-  cursor: pointer; /* Курсор при наведении */
-  position: absolute; /* Абсолютное позиционирование */
-  top: 20px; /* Расстояние от верхнего края */
-  left: 20px; /* Расстояние от левого края */
-  transform: none; /* Убираем смещение для точного позиционирования */
-}
-
 /* Скрытый аудиоплеер */
 audio {
   display: none;
