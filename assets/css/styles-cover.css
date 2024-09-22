@@ -12,6 +12,20 @@ body, html {
   align-items: center;
 }
 
+/* Анимация мигания */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Класс для мигающего текста */
+.blinking-text {
+  animation: blink 1s infinite;
+  color: red; /* Вы можете задать любой цвет */
+}
+
+
 .programs-grid {
   display: flex;
   flex-wrap: wrap;

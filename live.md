@@ -39,6 +39,17 @@ permalink: live
 
       <!-- Проверяем, находится ли программа в пределах текущего часа и двух следующих -->
       {% if page_hour == current_hour_number or page_hour == next_hour_1 or page_hour == next_hour_2 %}
+
+        <!-- Определяем текст: "Сейчас", "Далее", "Скоро" -->
+        {% if page_hour == current_hour_number %}
+          <h2 class="blinking-text">Сейчас</h2>
+        {% elsif page_hour == next_hour_1 %}
+          <h2>Далее</h2>
+        {% elsif page_hour == next_hour_2 %}
+          <h2>Скоро</h2>
+        {% endif %}
+
+        <!-- Карточка программы -->
         <div class="program-card">
           <!-- Время программы -->
           <p class="program_time">{{ page.start_time }}</p>
