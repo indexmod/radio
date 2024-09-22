@@ -89,45 +89,27 @@ p {
   100% { background-position: 0% 50%; }
 }
 
-/* Стили для овальной кнопки */
-.oval-button {
-  width: 150px;
-  height: 80px;
-  border: 2px solid black;
-  border-radius: 50px;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 1; /* Кнопка поверх градиента */
-}
-
-/* Треугольник в центре кнопки */
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 25px solid black;
-  transform: rotate(-90deg); /* Поворачиваем треугольник на 90 градусов */
+/* Стили для кнопки скрытия/показа контента */
+.button-toggle {
+  width: auto; /* Ширина кнопки может быть автоматической или заданной */
+  height: 50px; /* Высота кнопки */
+  border: 2px solid black; /* Обводка кнопки */
+  border-radius: 5px; /* Закругление углов */
+  background-color: transparent; /* Прозрачный фон */
+  display: flex; /* Используем флекс для центрирования текста */
+  justify-content: center; /* Центрируем текст по горизонтали */
+  align-items: center; /* Центрируем текст по вертикали */
+  cursor: pointer; /* Курсор при наведении */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 50%; /* Центр по вертикали */
+  left: 50%; /* Центр по горизонтали */
+  transform: translate(-50%, -50%); /* Смещение для точного центрирования */
+  z-index: 1; /* Кнопка поверх других элементов */
 }
 
 /* Скрытый аудиоплеер */
 audio {
   display: none;
-}
-
-/* Контейнер для таблицы расписания */
-#scheduleContainer {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  padding: 20px;
-  margin: 20px;
-  max-width: 90%;
-  overflow-y: auto;
-  max-height: 80vh;
 }
 
 /* Стили для ссылок */
@@ -142,17 +124,4 @@ a:hover {
 
 a:visited, a:active {
   color: black;
-}
-
-/* Footer стили */
-footer {
-  position: absolute;
-  bottom: 20px;
-  width: 500px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  background-color: transparent;
-  padding: 10px;
-  z-index: 1;
 }
