@@ -18,6 +18,19 @@ permalink: live
     <!-- Переводим current_hour в число -->
     {% assign current_hour_number = current_hour | plus: 0 %}
 
+    <!-- Рассчитываем следующие два часа с учетом перехода через полночь -->
+    {% assign next_hour_1 = current_hour_number | plus: 1 %}
+    {% assign next_hour_2 = current_hour_number | plus: 2 %}
+    {% if next_hour_1 == 24 %}
+      {% assign next_hour_1 = 0 %}
+    {% endif %}
+    {% if next_hour_2 == 24 %}
+      {% assign next_hour_2 = 0 %}
+    {% endif %}
+    {% if next_hour_2 == 25 %}
+      {% assign next_hour_2 = 1 %}
+    {% endif %}
+
     <!-- Цикл по страницам с фильтрацией и сортировкой -->
     {% assign mypages = site.html_pages | where: "type", "program" | sort: "start_time" %}
     {% for page in mypages %}
@@ -25,7 +38,7 @@ permalink: live
       {% assign page_hour = page.start_time | date: "%H" | plus: 0 %}
 
       <!-- Проверяем, находится ли программа в пределах текущего часа и двух следующих -->
-      {% if page_hour >= current_hour_number and page_hour <= current_hour_number | plus: 2 %}
+      {% if page_hour == current_hour_number or page_hour == next_hour_1 or page_hour == next_hour_2 %}
         <div class="program-card">
           <!-- Время программы -->
           <p class="program_time">{{ page.start_time }}</p>
