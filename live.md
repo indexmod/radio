@@ -12,9 +12,6 @@ permalink: live
   <img src="{{ site.baseurl }}/images/button.png" alt="Toggle Button" />
 </button>
 
-<script src="{{ site.baseurl }}/assets/js/script.js"></script>
-
-
   <!-- Аудиоплеер, скрытый по умолчанию -->
   <audio id="audioPlayer" controls></audio>
 
@@ -67,3 +64,5 @@ permalink: live
       {% endif %}
     {% endfor %}
   </div>
+
+  <script src="{{ site.baseurl }}/assets/js/script.js"></script>
