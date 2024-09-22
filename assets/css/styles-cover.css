@@ -8,42 +8,38 @@
 body, html {
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start; /* Выравнивание контента по верхнему краю */
   align-items: center;
+  overflow-y: auto; /* Включаем прокрутку, если контент выходит за пределы экрана */
 }
 
 /* Анимация мигания */
 @keyframes blink {
-  0% { opacity: 1; }
+  0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-  100% { opacity: 1; }
 }
 
-/* Класс для мигающего текста */
-.blinking-text {
-  animation: blink 1s infinite;
-  color: black;          /* Черный цвет текста */
-  font-family: Monaco, monospace; /* Шрифт Monaco */
-  font-size: 30px;       /* Размер шрифта 30px */
-  text-transform: uppercase; /* Эффект капслока */
+/* Общие стили для текста */
+body, h1, h2, p, .program-card {
+  font-family: Monaco, monospace;
+  color: black;
+  font-size: 1.875rem; /* Размер шрифта 30px */
+  text-transform: uppercase;
 }
 
 /* Стили для заголовков h1 и h2 */
 h1, h2 {
-  font-family: Monaco, monospace;
-  font-size: 30px;      /* Размер шрифта 30px */
-  text-transform: uppercase;
-  color: black;
   margin-bottom: 10px;
 }
 
 /* Контейнер для карточек и заголовков */
 .programs-grid {
-  display: block; /* Изменение структуры на блочную */
+  display: block;
   width: 100%;
   max-width: 600px;
   padding: 20px;
-  text-align: left; /* Выровнять заголовки и карточки по левому краю */
+  text-align: left;
 }
 
 /* Стили для карточек программ */
@@ -53,40 +49,28 @@ h1, h2 {
   padding: 15px;
   background-color: transparent;
   margin-bottom: 20px;
-  font-family: Monaco, monospace;
-  font-size: 30px;      /* Размер шрифта 30px */
-  color: black;
   text-align: left;
 }
 
+/* Стили для времени программы */
 .program_time {
-  font-size: 30px;      /* Размер шрифта 30px */
   font-weight: bold;
-}
-
-/* Стили для параграфов */
-p {
-  padding: 10px;
-  font-family: Monaco, monospace;
-  font-size: 30px;      /* Размер шрифта 30px */
-  color: black;
 }
 
 /* Анимация градиента фона */
 .gradient {
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh + 20px); /* Размер градиента чуть больше нижнего края */
   background: linear-gradient(45deg, silver, grey);
   background-size: 400% 400%;
   animation: gradientChange 5s ease infinite;
-  z-index: -1; /* Градиент находится под кнопкой и таблицей */
+  z-index: -1;
 }
 
 @keyframes gradientChange {
-  0% { background-position: 0% 50%; }
+  0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 /* Скрытый аудиоплеер */
@@ -104,6 +88,17 @@ a:hover {
   text-decoration: underline;
 }
 
-a:visited, a:active {
-  color: black;
+/* Респонсивность для небольших устройств */
+@media (max-width: 768px) {
+  .program-card, h1, h2, p {
+    font-size: 1.5rem; /* Размер шрифта меньше на небольших экранах */
+  }
+
+  .programs-grid {
+    padding: 10px; /* Уменьшаем поля на маленьких экранах */
+  }
+
+  .gradient {
+    height: calc(100vh + 10px); /* Коррекция высоты градиента */
+  }
 }
