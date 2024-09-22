@@ -49,12 +49,17 @@ title: Радио
         {% endif %}
 
         <!-- Карточка программы -->
-        <div class="program-card">
-          <!-- Время программы -->
-          <p class="program_time">{{ page.start_time }}</p>
-          <!-- Название программы Ссылка на страницу программы -->
-          <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
-        </div>
+<div class="program-card">
+  <!-- Время программы -->
+  <p class="program_time">{{ page.start_time }}</p>
+  <!-- Название программы Ссылка на страницу программы -->
+  <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
+
+  <!-- Скрытая строка с аудиофайлом -->
+  <span class="audio-file" style="display: none;">{{ page.audio_file }}</span>
+</div>
       {% endif %}
     {% endfor %}
   </div>
+
+  <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
