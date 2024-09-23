@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* Стили для body и html — основные стили страницы */
 body, html {
   height: 100%;
   display: flex;
@@ -12,56 +13,15 @@ body, html {
   justify-content: flex-start; /* Выравнивание контента по верхнему краю */
   align-items: center;
   overflow-y: auto; /* Включаем прокрутку, если контент выходит за пределы экрана */
-}
-
-/* Анимация мигания */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* Общие стили для текста */
-body, h1, h2, p, .program-card {
-  font-family: Monaco, monospace;
-  color: black;
-  font-size: 1.875rem; /* Размер шрифта 30px */
-  text-transform: uppercase;
-}
-
-/* Стили для заголовков h1 и h2 */
-h1, h2 {
-  margin-bottom: 10px;
-}
-
-/* Контейнер для карточек и заголовков */
-.programs-grid {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  text-align: left;
-}
-
-/* Стили для карточек программ */
-.program-card {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 15px;
-  background-color: transparent;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Стили для времени программы */
-.program_time {
-  font-weight: bold;
+  font-family: Monaco, monospace; /* Основной шрифт для текста */
+  color: black; /* Основной цвет текста */
 }
 
 /* Анимация градиента фона */
 .gradient {
   position: absolute;
   width: 100%;
-  height: calc(100vh + 20px); /* Размер градиента чуть больше нижнего края */
+  height: calc(100vh + 20px); /* Градиент чуть больше нижнего края */
   background: linear-gradient(45deg, silver, grey);
   background-size: 400% 400%;
   animation: gradientChange 5s ease infinite;
@@ -78,6 +38,46 @@ audio {
   display: none;
 }
 
+/* Стили для заголовков h1 и h2 */
+h1, h2 {
+  margin-bottom: 10px;
+  font-size: 1.875rem; /* Размер шрифта 30px */
+  text-transform: uppercase; /* Только заголовки в uppercase */
+}
+
+/* Класс для мигающего текста */
+.blinking-text {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Контейнер для карточек и заголовков */
+.programs-grid {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  text-align: left;
+}
+
+/* Стили для карточек программ */
+.program-card {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+/* Стили для времени программы */
+.program_time {
+  font-weight: bold;
+  color: green;
+}
+
 /* Стили для ссылок */
 a {
   color: black;
@@ -91,11 +91,11 @@ a:hover {
 /* Респонсивность для небольших устройств */
 @media (max-width: 768px) {
   .program-card, h1, h2, p {
-    font-size: 1.5rem; /* Размер шрифта меньше на небольших экранах */
+    font-size: 1.5rem; /* Уменьшенный размер шрифта для небольших экранов */
   }
 
   .programs-grid {
-    padding: 10px; /* Уменьшаем поля на маленьких экранах */
+    padding: 10px; /* Уменьшаем поля */
   }
 
   .gradient {
