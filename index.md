@@ -35,7 +35,7 @@ title: Радио
     {% endif %}
   {% endfor %}
 
-  ---
+  <hr style="border: 10px solid black; width: 100%; margin: 20px auto;">
 
   <!-- Карточка для оставшихся программ на сегодня -->
   <div class="program-card">
