@@ -29,6 +29,7 @@ title: Радио
       <div class="program-card">
         <h2 class="blinking-text">СЕЙЧАС</h2>
         <p class="program_time">{{ page.start_time }}</p>
+        <a href="{{ page.audio_file }}" class="audio-link" style="display: none;"></a>
         <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
       </div>
     {% endif %}
@@ -41,7 +42,8 @@ title: Радио
       {% for page in mypages %}
         {% assign page_hour = page.start_time | date: "%H" | plus: 0 %}
         {% if page_hour > current_hour_number %}
-          {{ page.start_time }} <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>;
+          <span class="program_time">{{ page.start_time }}</span>
+          <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>;
         {% endif %}
       {% endfor %}
     </p>
