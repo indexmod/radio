@@ -27,7 +27,7 @@ title: Радио
 
     {% if page_hour == current_hour_number %}
       <div class="program-card">
-        <h2 class="blinking-text">СЕЙЧАС</h2>
+        <h2 class="blinking-text">СЕЙЧАС &#11208;</h2>
         <p class="program_time">{{ page.start_time }}</p>
         <a href="{{ page.audio_file }}" class="audio-link" style="display: none;"></a>
         <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
@@ -35,7 +35,7 @@ title: Радио
     {% endif %}
   {% endfor %}
 
-  --- 
+  ---
 
   <!-- Карточка для оставшихся программ на сегодня -->
   <div class="program-card">
