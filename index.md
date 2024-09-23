@@ -27,7 +27,7 @@ title: Радио
 
     {% if page_hour == current_hour_number %}
       <div class="program-card">
-        <h2 class="blinking-text">СЕЙЧАС &#11208;</h2>
+      <h2 class="blinking-text">СЕЙЧАС &#9654;</h2>
         <p class="program_time">{{ page.start_time }}</p>
         <a href="{{ page.audio_file }}" class="audio-link" style="display: none;"></a>
         <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
@@ -50,6 +50,23 @@ title: Радио
       {% endfor %}
     </p>
   </div>
+
+  <hr style="border: 10px solid black; width: 100%; margin: 20px auto;">
+
+  <div class="program-card">
+    <h2>ПОСЛЕ ПОЛУНОЧИ</h2>
+    <p>
+      {% for page in mypages %}
+        {% assign page_hour = page.start_time | date: "%H" | plus: 0 %}
+        {% if page_hour < current_hour_number %}
+          <span class="program_time">{{ page.start_time }}</span>
+          <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>;
+        {% endif %}
+      {% endfor %}
+    </p>
+  </div>
+
+
 </div>
 
 <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
