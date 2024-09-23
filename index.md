@@ -35,7 +35,7 @@ title: Радио
     {% endif %}
   {% endfor %}
 
-  <hr style="border: 10px solid black; width: 100%; margin: 20px auto;">
+  <hr style="border: 1px solid green; width: 100%; margin: 20px auto;">
 
   <!-- Карточка для оставшихся программ на сегодня -->
   <div class="program-card">
@@ -51,7 +51,7 @@ title: Радио
     </p>
   </div>
 
-  <hr style="border: 10px solid black; width: 100%; margin: 20px auto;">
+  <hr style="border: 1px solid green; width: 100%; margin: 20px auto;">
 
   <div class="program-card">
     <h2>ПОСЛЕ ПОЛУНОЧИ</h2>
