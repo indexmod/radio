@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
   const audioPlayer = document.getElementById('audioPlayer');
-  const programCards = document.querySelectorAll('.program-card');
   const currentMinute = new Date().getMinutes();
 
   // Функция для запуска аудиофайла с текущей минуты
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Добавляем обработчик клика на любую часть страницы
   document.body.addEventListener('click', function () {
     // Найдем первый аудиофайл (первую скрытую ссылку)
-    const firstAudioFile = document.querySelector('.audio-file').href;
+    const firstAudioFile = document.querySelector('.audio-link').href;
 
     if (firstAudioFile) {
       playAudio(firstAudioFile);
