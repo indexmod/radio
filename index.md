@@ -66,10 +66,7 @@ title: Радио
     </p>
   </div>
 
-  <!-- Отображение актуального времени -->
-  <div id="currentTime" style="font-size: 24px; margin-top: 20px;"></div>
 
 </div>
 
 <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
-<script src="{{ site.baseurl }}/assets/js/timeChecker.js"></script>
