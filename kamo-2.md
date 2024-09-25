@@ -1,8 +1,8 @@
 ---
 layout: programs
 title: Хрустальный шар
-start_time: "01:00"
-permalink: /01
+start_time: "13:00"
+permalink: /01-2
 author: Андрей Дей
 location: Белград
 date: "2024-09-25"
