@@ -4,6 +4,8 @@ title: Хрустальный шар
 start_time: "01:00"
 permalink: /01
 author: Андрей Дей
+location: Белград
+date: "2024-09-25"
 guest: Макс Камо
 audio_file: "/assets/audio/program01.mp3"
 type: program
