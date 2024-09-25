@@ -8,7 +8,7 @@
 body, html {
   height: 100%;                   /* Заполнение всей высоты */
   font-family: Monaco, monospace; /* Шрифт для всего текста */
-  font-size: 30px;                /* Размер шрифта 30px */
+  font-size: 20px;                /* Размер шрифта 20px для основного текста */
   color: black;                   /* Цвет текста */
   line-height: 1.5;               /* Высота строки */
   padding: 20px;                  /* Отступы вокруг текста */
@@ -17,6 +17,15 @@ body, html {
   animation: gradientChange 5s ease infinite; /* Анимация градиента */
 }
 
+/* Поля для контейнера */
+.container {
+  margin: 20px;                  /* Отступы для контейнера */
+  padding: 20px;                 /* Внутренние отступы для контейнера */
+  background-color: rgba(255, 255, 255, 0.8); /* Фоновый цвет контейнера */
+  border-radius: 8px;            /* Скругленные углы контейнера */
+}
+
+/* Анимация градиента */
 @keyframes gradientChange {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
