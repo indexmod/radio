@@ -16,13 +16,16 @@ body, html {
   font-family: Monaco, monospace;
   color: black;
   padding: 10px; /* Небольшие поля */
+  position: relative;
 }
 
 /* Анимация градиента фона */
 .gradient {
-  position: fixed; /* Фиксируем градиент */
+  position: fixed;
+  top: -20%; /* Делаем запас сверху */
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 140%; /* Увеличиваем высоту за пределы экрана */
   background: linear-gradient(90deg, silver, grey);
   background-size: 400% 400%;
   animation: gradientChange 10s ease infinite;
