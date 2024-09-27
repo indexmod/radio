@@ -22,9 +22,9 @@ body, html {
   position: absolute;
   width: 100%;
   height: calc(100vh + 20px); /* Градиент чуть больше нижнего края */
-  background: linear-gradient(45deg, white, silver, grey);
+  background: linear-gradient(-90deg, white, silver, grey);
   background-size: 400% 400%;
-  animation: gradientChange 1s ease infinite;
+  animation: gradientChange 5s ease infinite;
   z-index: -1;
   overflow: hidden; /* Это нужно, чтобы фон не вызывал прокрутку */
 }
