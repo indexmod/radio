@@ -22,9 +22,9 @@ body, html {
   position: absolute;
   width: 100%;
   height: calc(100vh + 20px); /* Градиент чуть больше нижнего края */
-  background: linear-gradient(-90deg, white, silver, grey);
+  background: linear-gradient(45deg, white, silver, grey);
   background-size: 400% 400%;
-  animation: gradientChange 5s ease infinite;
+  animation: gradientChange 1s ease infinite;
   z-index: -1;
   overflow: hidden; /* Это нужно, чтобы фон не вызывал прокрутку */
 }
@@ -58,25 +58,28 @@ h1, h2 {
 
 /* Стили для ссылок */
 a {
-  color: #333;
+  color: black; /* Черный цвет для ссылок */
   font-size: 16px;
   text-decoration: none; /* Убираем подчеркивание */
 }
 
 a:hover {
-  color: #007BFF;
-  text-decoration: underline;
+  color: black; /* Ссылки остаются черными при наведении */
+  text-decoration: none; /* Подчеркивание не появляется при наведении */
 }
 
 /* Контейнер для карточек программ */
 .programs-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, auto);
   gap: 10px;
   width: 100%;
-  max-width: 1200px; /* Сетка на всю ширину окна */
   padding: 20px;
-  text-align: left; /* Выравниваем содержимое по левому краю */
+  max-height: 90vh; /* Ограничиваем высоту до 90% высоты экрана */
+  overflow-y: auto; /* Включаем вертикальную прокрутку */
+  scroll-behavior: smooth; /* Плавная прокрутка */
+  margin: 20px;
 }
 
 /* Стили для карточек программ */
@@ -84,31 +87,112 @@ a:hover {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: white;
+  background-color: transparent; /* Прозрачный фон карточек */
+  text-align: left; /* Выравнивание содержимого по левому краю */
   margin-bottom: 20px;
 }
 
 /* Стили для времени программы */
 .program_time {
-  font-weight: bold;
+  font-weight: 900; /* Более жирный текст */
   color: green;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-/* Респонсивность для небольших устройств */
-@media (max-width: 768px) {
-  .programs-grid {
-    grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
-    gap: 15px;
-    padding: 10px;
+  font-size: 18px; /* Увеличиваем шрифт
+  /* Сброс базовых стилей */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
+  /* Стили для body и html — основные стили страницы */
+  body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Выравнивание контента по верхнему краю */
+    align-items: center;
+    overflow-y: auto; /* Включаем прокрутку, если контент выходит за пределы экрана */
+    font-family: Monaco, monospace; /* Основной шрифт для текста */
+    color: black; /* Основной цвет текста */
+  }
+
+  /* Анимация градиента фона */
   .gradient {
-    height: calc(100vh + 10px); /* Коррекция высоты градиента */
+    position: absolute;
+    width: 100%;
+    height: calc(100vh + 20px); /* Градиент чуть больше нижнего края */
+    background: linear-gradient(45deg, white, silver, grey);
+    background-size: 400% 400%;
+    animation: gradientChange 1s ease infinite;
+    z-index: -1;
+    overflow: hidden; /* Это нужно, чтобы фон не вызывал прокрутку */
   }
 
-  .program-card, h1, h2, p {
-    font-size: 1.5rem; /* Уменьшаем шрифт на маленьких экранах */
+  @keyframes gradientChange {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
-}
+
+  /* Скрытый аудиоплеер */
+  audio {
+    display: none;
+  }
+
+  /* Стили для заголовков h1 и h2 */
+  h1, h2 {
+    margin-bottom: 10px;
+    font-size: 1.875rem; /* Размер шрифта 30px */
+    text-transform: uppercase; /* Только заголовки в uppercase */
+  }
+
+  /* Класс для мигающего текста */
+  .blinking-text {
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* Стили для ссылок */
+  a {
+    color: black; /* Черный цвет для ссылок */
+    font-size: 16px;
+    text-decoration: none; /* Убираем подчеркивание */
+  }
+
+  a:hover {
+    color: black; /* Ссылки остаются черными при наведении */
+    text-decoration: none; /* Подчеркивание не появляется при наведении */
+  }
+
+  /* Контейнер для карточек программ */
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+    max-height: 90vh; /* Ограничиваем высоту до 90% высоты экрана */
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+    margin: 20px;
+  }
+
+  /* Стили для карточек программ */
+  .program-card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: transparent; /* Прозрачный фон карточек */
+    text-align: left; /* Выравнивание содержимого по левому краю */
+    margin-bottom: 20px;
+  }
+
+  /* Стили для времени программы */
+  .program_time {
+    font-weight: 900; /* Более жирный текст */
+    color: green;
+    font-size: 18px; /* Увеличиваем шрифт
