@@ -1,6 +1,6 @@
 ---
 layout: cover
-title: Радио
+title: Эфир Indexmod
 ---
 
 <!-- Основной градиентный фон -->
