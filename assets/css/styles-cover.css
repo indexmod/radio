@@ -60,7 +60,7 @@ h1, h2 {
 a {
   color: #333;
   font-size: 16px;
-  text-decoration: none;
+  text-decoration: none; /* Убираем подчеркивание */
 }
 
 a:hover {
@@ -72,15 +72,11 @@ a:hover {
 .programs-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, auto);
   gap: 10px;
   width: 100%;
-  max-width: 600px;
+  max-width: 1200px; /* Сетка на всю ширину окна */
   padding: 20px;
-  max-height: 90vh; /* Ограничиваем высоту до 90% высоты экрана */
-  overflow-y: auto; /* Включаем вертикальную прокрутку */
-  scroll-behavior: smooth; /* Плавная прокрутка */
-  margin: 20px;
+  text-align: left; /* Выравниваем содержимое по левому краю */
 }
 
 /* Стили для карточек программ */
@@ -89,7 +85,6 @@ a:hover {
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: white;
-  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -103,15 +98,17 @@ a:hover {
 
 /* Респонсивность для небольших устройств */
 @media (max-width: 768px) {
-  .program-card, h1, h2, p {
-    font-size: 1.5rem; /* Уменьшенный размер шрифта для небольших экранов */
-  }
-
   .programs-grid {
-    padding: 10px; /* Уменьшаем поля */
+    grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+    gap: 15px;
+    padding: 10px;
   }
 
   .gradient {
     height: calc(100vh + 10px); /* Коррекция высоты градиента */
+  }
+
+  .program-card, h1, h2, p {
+    font-size: 1.5rem; /* Уменьшаем шрифт на маленьких экранах */
   }
 }
