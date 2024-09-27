@@ -48,9 +48,10 @@ body, html {
   display: flex;
   align-items: center;
   z-index: 10;
-  width: 100%; /* Растягиваем по ширине экрана */
+  width: calc(100% - 3px); /* Уменьшаем ширину на 3 пикселя */
   gap: 10px;
 }
+
 
 .header-info span {
   font-size: 20px;
