@@ -86,6 +86,17 @@ audio {
   display: none;
 }
 
+.blinking {
+    animation: blink 5s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+``
+
+
 /* Стили для заголовков h1 и h2 */
 h1, h2 {
   margin-bottom: 10px;

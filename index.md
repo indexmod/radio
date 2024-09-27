@@ -33,3 +33,4 @@ title: Радио
 <!-- Подключение скрипта -->
 <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
 <script src="{{ site.baseurl }}/assets/js/timeDisplay.js"></script>
+<script src="{{ site.baseurl }}/assets/js/blinkCurrentHour.js"></script>
