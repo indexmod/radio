@@ -23,5 +23,5 @@ title: Радио
   {% endfor %}
 </div>
 
-<!-- Подключение внешних стилей и скрипта -->
+<!-- Подключение скрипта -->
 <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
