@@ -22,7 +22,7 @@ body, html {
   position: absolute;
   width: 100%;
   height: calc(100vh + 20px);
-  background: linear-gradient(90deg, white, silver, grey);
+  background: linear-gradient(90deg, silver, grey);
   background-size: 400% 400%;
   animation: gradientChange 10s ease infinite;
   z-index: -1;
