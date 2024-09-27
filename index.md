@@ -1,3 +1,8 @@
+---
+layout: cover
+title: Радио
+---
+
 <!-- Основной градиентный фон -->
 <div class="gradient"></div>
 
