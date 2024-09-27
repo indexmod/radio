@@ -42,7 +42,7 @@ body, html {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 51, 0.9); /* Синий с прозрачностью 50% */
+  background-color: rgba(0, 0, 51, 0.7); /* Синий с прозрачностью 50% */
   color: black;
   padding: 10px;
   display: inline-flex; /* Меняем на inline-flex для адаптивной ширины */
@@ -57,7 +57,7 @@ body, html {
 .header-info span {
   font-size: 20px;
   margin-right: 20px;
-  color: black;
+  color: #0000FF;
 }
 
 /* Мигание красного кружка */
@@ -104,10 +104,9 @@ h1, h2 {
   text-transform: uppercase;
 }
 
-h1, h2 {
+h3 {
   margin-bottom: 0px;
   font-size: 20px;
-  text-transform: uppercase;
 }
 
 /* Стили для ссылок */
