@@ -66,7 +66,7 @@ body, html {
   height: 15px;
   background-color: red;
   border-radius: 50%;
-  animation: blink 10s infinite;
+  animation: blink 5s infinite;
 }
 
 @keyframes blink {
@@ -75,7 +75,7 @@ body, html {
 }
 
 /* Стиль времени */
-#currentTime, #timeDisplay {
+#timeDisplay {
   font-weight: 900;
   color: green; /* Измените цвет на белый для контрастности */
   font-size: 20px; /* Размер шрифта как в карточке */
