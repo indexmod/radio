@@ -1,5 +1,5 @@
 // Получаем элемент, в который будем выводить текущее время
-const timeDisplay = document.getElementById('currentTime');
+const timeDisplay = document.getElementById('timeDisplay'); // Изменение здесь
 
 // Функция для обновления времени
 function updateTime() {
