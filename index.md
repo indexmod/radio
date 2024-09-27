@@ -1,19 +1,15 @@
----
-layout: cover
-title: Радио
----
-
 <!-- Основной градиентный фон -->
 <div class="gradient"></div>
 
+<!-- Контейнер с заголовком, мигающим кружком и временем -->
+<div class="header-info">
+  <span>{{ site.title }}</span>
+  <div class="blinking-circle"></div>
+  <div id="timeDisplay"></div>
+</div>
+
 <!-- Аудиоплеер, скрытый по умолчанию -->
 <audio id="audioPlayer" controls></audio>
-
-<!-- Блок с мигающим кружком и текущим временем -->
-<div class="header-info">
-  <div class="blinking-circle"></div>
-  <div id="currentTime" class="time-display"></div>
-</div>
 
 <!-- Сетка программ -->
 <div id="programsContainer" class="programs-grid">
@@ -29,16 +25,6 @@ title: Радио
   {% endfor %}
 </div>
 
-<!-- Подключение скрипта для обновления времени -->
+<!-- Подключение скрипта -->
 <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
-<script>
-  function updateTime() {
-    const timeElement = document.getElementById('currentTime');
-    const now = new Date();
-    timeElement.textContent = now.toLocaleTimeString();
-  }
-
-  // Обновляем время каждую секунду
-  setInterval(updateTime, 1000);
-  updateTime();
-</script>
+<script src="{{ site.baseurl }}/assets/js/timeDisplay.js"></script>

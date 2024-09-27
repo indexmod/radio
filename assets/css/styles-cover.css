@@ -15,7 +15,7 @@ body, html {
   overflow-y: auto;
   font-family: Monaco, monospace;
   color: black;
-  padding: 10px; /* Небольшие поля */
+  padding: 5%; /* Универсальные поля */
   position: relative;
 }
 
@@ -40,11 +40,22 @@ body, html {
 /* Контейнер для индикатора и времени */
 .header-info {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  padding: 10px;
   display: flex;
   align-items: center;
+  z-index: 10;
+  width: 100%; /* Растягиваем по ширине экрана */
   gap: 10px;
+}
+
+.header-info span {
+  font-size: 20px;
+  margin-right: 20px;
+  color: white;
 }
 
 /* Мигание красного кружка */
@@ -62,7 +73,7 @@ body, html {
 }
 
 /* Стиль времени */
-#currentTime {
+#currentTime, #timeDisplay {
   font-weight: 900;
   color: green;
   font-size: 20px; /* Размер шрифта как в карточке */
@@ -122,11 +133,5 @@ a:hover {
 @media (max-width: 768px) {
   .programs-grid {
     grid-template-columns: 1fr; /* При сужении в один столбик */
-  }
-}
-
-@media (min-width: 769px) {
-  body, html {
-    padding: 5%; /* Небольшие поля для крупных экранов */
   }
 }
