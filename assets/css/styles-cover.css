@@ -49,7 +49,7 @@ body, html {
   align-items: center;
   z-index: 10;
   gap: 10px;
-  padding-right: 3px; /* Добавляем дополнительный отступ справа */
+  padding-right: 10px; /* Добавляем дополнительный отступ справа */
 }
 
 
@@ -66,7 +66,7 @@ body, html {
   height: 15px;
   background-color: red;
   border-radius: 50%;
-  animation: blink 1s infinite;
+  animation: blink 10s infinite;
 }
 
 @keyframes blink {
