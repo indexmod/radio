@@ -56,23 +56,40 @@ h1, h2 {
   50% { opacity: 0; }
 }
 
+/* Стили для ссылок */
+a {
+  color: #333;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #007BFF;
+  text-decoration: underline;
+}
+
 /* Контейнер для карточек программ */
 .programs-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
   width: 100%;
   max-width: 600px;
   padding: 20px;
-  text-align: left;
   max-height: 90vh; /* Ограничиваем высоту до 90% высоты экрана */
   overflow-y: auto; /* Включаем вертикальную прокрутку */
   scroll-behavior: smooth; /* Плавная прокрутка */
+  margin: 20px;
 }
 
 /* Стили для карточек программ */
 .program-card {
-  border: 0px solid transparent;
-  border-radius: 10px;
   padding: 15px;
-  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -80,16 +97,8 @@ h1, h2 {
 .program_time {
   font-weight: bold;
   color: green;
-}
-
-/* Стили для ссылок */
-a {
-  color: black;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 /* Респонсивность для небольших устройств */
@@ -105,37 +114,4 @@ a:hover {
   .gradient {
     height: calc(100vh + 10px); /* Коррекция высоты градиента */
   }
-}
-
-/* Стили для сетки программ */
-.programs-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, auto);
-  gap: 10px;
-  margin: 20px;
-}
-
-.program-card {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: white;
-  text-align: center;
-}
-
-.program_time {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-a {
-  font-size: 16px;
-  text-decoration: none;
-  color: #333;
-}
-
-a:hover {
-  color: #007BFF;
 }
