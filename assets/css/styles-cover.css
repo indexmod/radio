@@ -100,7 +100,7 @@ audio {
 /* Стили для заголовков h1 и h2 */
 h1, h2 {
   margin-bottom: 10px;
-  font-size: 1.875rem;
+  font-size: 20;
   text-transform: uppercase;
 }
 
