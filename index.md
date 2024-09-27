@@ -26,9 +26,10 @@ title: Радио
     <div class="program-card">
       <p class="program_time">{{ page.start_time }}</p>
       <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
+      <!-- Скрытая ссылка на аудиофайл -->
+      <a class="audio-link" href="{{ page.audio_file }}" style="display:none;">Audio</a>
     </div>
   {% endfor %}
-</div>
 
 <!-- Подключение скриптов -->
 <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
