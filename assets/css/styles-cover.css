@@ -45,12 +45,13 @@ body, html {
   background-color: black;
   color: white;
   padding: 10px;
-  display: flex;
+  display: inline-flex; /* Меняем на inline-flex для адаптивной ширины */
   align-items: center;
   z-index: 10;
-  width: calc(100% - 3px); /* Уменьшаем ширину на 3 пикселя */
   gap: 10px;
+  padding-right: 3px; /* Добавляем дополнительный отступ справа */
 }
+
 
 
 .header-info span {
