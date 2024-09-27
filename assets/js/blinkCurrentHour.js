@@ -12,4 +12,12 @@ function blinkCurrentProgramTime() {
     programTimes.forEach(programTime => {
         // Сравниваем текущее время программы с текущим часом
         if (programTime.textContent.startsWith(currentHour)) {
-            programTime.classList.add('blinking'); // Добавляем класс
+            programTime.classList.add('blinking'); // Добавляем класс для мигания
+        } else {
+            programTime.classList.remove('blinking'); // Удаляем класс для неактивных
+        }
+    });
+}
+
+// Запускаем мигание каждую секунду
+setInterval(blinkCurrentProgramTime, 1000);
