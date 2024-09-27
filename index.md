@@ -8,7 +8,7 @@ title: Радио
 
 <!-- Контейнер с заголовком, мигающим кружком и временем -->
 <div class="header-info">
-  <span>{{ site.title }}</span>
+  <span><h1>{{ site.title }}</h1></span>
   <div class="blinking-circle"></div>
   <div id="timeDisplay"></div>
 </div>
