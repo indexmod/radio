@@ -77,7 +77,7 @@ body, html {
 /* Стиль времени */
 #currentTime, #timeDisplay {
   font-weight: 900;
-  color: white; /* Измените цвет на белый для контрастности */
+  color: green; /* Измените цвет на белый для контрастности */
   font-size: 20px; /* Размер шрифта как в карточке */
 }
 
