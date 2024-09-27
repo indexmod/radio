@@ -4,7 +4,7 @@ title: Хрустальный шар
 start_time: "13:00"
 permalink: /01-2
 author: Андрей Дей
-location: Бостния
+location: Босния
 date: "2024-09-25"
 guest: Макс Камо
 audio_file: "/assets/audio/program01.mp3"
