@@ -9,64 +9,19 @@ title: Радио
 <!-- Аудиоплеер, скрытый по умолчанию -->
 <audio id="audioPlayer" controls></audio>
 
-<!-- Секция для отображения карточек программ -->
+<!-- Сетка программ -->
 <div id="programsContainer" class="programs-grid">
-  <!-- Получаем текущий час -->
-  {% assign current_hour = site.time | date: "%H" %}
-  {% assign current_minute = site.time | date: "%M" %}
-
-  <!-- Переводим current_hour в число -->
-  {% assign current_hour_number = current_hour | plus: 0 %}
-
   <!-- Цикл по страницам с фильтрацией и сортировкой -->
   {% assign mypages = site.html_pages | where: "type", "program" | sort: "start_time" %}
 
-  <!-- Карточка для текущего часа -->
+  <!-- Вывод программ в сетке 6 на 4 -->
   {% for page in mypages %}
-    {% assign page_hour = page.start_time | date: "%H" | plus: 0 %}
-
-    {% if page_hour == current_hour_number %}
-      <div class="program-card">
-      <h2 class="blinking-text">СЕЙЧАС &#9654;</h2>
-        <p class="program_time">{{ page.start_time }}</p>
-        <a href="{{ page.audio_file }}" class="audio-link" style="display: none;"></a>
-        <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
-      </div>
-    {% endif %}
+    <div class="program-card">
+      <p class="program_time">{{ page.start_time }}</p>
+      <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
+    </div>
   {% endfor %}
-
-  <hr style="border: 1px solid green; width: 100%; margin: 20px auto;">
-
-  <!-- Карточка для оставшихся программ на сегодня -->
-  <div class="program-card">
-    <h2>СЕГОДНЯ</h2>
-    <p>
-      {% for page in mypages %}
-        {% assign page_hour = page.start_time | date: "%H" | plus: 0 %}
-        {% if page_hour > current_hour_number %}
-          <span class="program_time">{{ page.start_time }}</span>
-          <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>;
-        {% endif %}
-      {% endfor %}
-    </p>
-  </div>
-
-  <hr style="border: 1px solid green; width: 100%; margin: 20px auto;">
-
-  <div class="program-card">
-    <h2>ПОСЛЕ ПОЛУНОЧИ</h2>
-    <p>
-      {% for page in mypages %}
-        {% assign page_hour = page.start_time | date: "%H" | plus: 0 %}
-        {% if page_hour < current_hour_number %}
-          <span class="program_time">{{ page.start_time }}</span>
-          <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>;
-        {% endif %}
-      {% endfor %}
-    </p>
-  </div>
-
-
 </div>
 
+<!-- Подключение внешних стилей и скрипта -->
 <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
