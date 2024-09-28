@@ -5,64 +5,29 @@
     box-sizing: border-box;
 }
 
-/* Общие стили для body и html */
-body, html {
-    height: 100%;
-    font-family: Monaco, monospace;
-    font-size: 20px;
-    color: black;
-    line-height: 1.5;
-    padding: 20px;
-    background: linear-gradient(90deg, silver, #CC9999);
-    background-size: 400% 400%;
-    animation: gradientChange 5s ease infinite;
-}
-
 body {
+    margin: 0;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Контент располагается один под другим */
+    align-items: flex-start; /* Все элементы по левому краю */
     background-color: transparent;
-    position: relative; /* Для размещения сферы поверх контента */
-}
-
-/* Анимация смены градиента */
-@keyframes gradientChange {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Контейнер для контента */
-.container {
-    margin: 20px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    position: relative; /* Оставляем, чтобы сфера не влияла на макет */
 }
 
 /* Сфера */
 .sphere {
-    width: 100px;
+    width: 100px; /* Уменьшение сферы до 100px */
     height: 100px;
     background: radial-gradient(circle at 30% 30%, #ffffff, #dddddd);
     border-radius: 50%;
-    box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3); /* Подкорректировал тени, чтобы соответствовало размеру сферы */
     animation: pulse 3s ease-in-out infinite;
-    position: absolute; /* Абсолютное позиционирование сферы */
-    top: 20px; /* Отступ сверху от края окна */
-    left: 20px; /* Отступ слева от края окна */
+    margin: 40px 0 10px 20px; /* Увеличил верхний отступ для правильного размещения */
+    padding: 10px; /* Добавил внутренние отступы */
     z-index: 100; /* Сфера находится выше контента */
 }
 
-/* Анимация пульсации сферы */
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -78,19 +43,50 @@ body {
     }
 }
 
-/* Заголовки */
-h1, h2, h3 {
+body,
+html {
+    height: 100%;
+    font-family: Monaco, monospace;
+    font-size: 20px;
+    color: black;
+    line-height: 1.5;
+    padding: 20px;
+    background: linear-gradient(90deg, silver, #CC9999);
+    background-size: 400% 400%;
+    animation: gradientChange 5s ease infinite;
+}
+
+.container {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+}
+
+@keyframes gradientChange {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1,
+h2,
+h3 {
     margin-bottom: 15px;
     font-size: 40px;
     font-family: "Old Standard TT", serif;
 }
 
-/* Текстовые блоки */
 p {
     margin-bottom: 10px;
 }
 
-/* Стили для ссылок */
 a {
     color: black;
     text-decoration: none;
@@ -105,7 +101,6 @@ a:active {
     color: black;
 }
 
-/* Шрифты Old Standard TT */
 .old-standard-tt-regular {
     font-family: "Old Standard TT", serif;
     font-weight: 400;
@@ -115,21 +110,11 @@ a:active {
 .old-standard-tt-bold {
     font-family: "Old Standard TT", serif;
     font-weight: 700;
-    font-style: normal;
+    font-style: normal.
 }
 
 .old-standard-tt-regular-italic {
     font-family: "Old Standard TT", serif;
     font-weight: 400;
     font-style: italic;
-}
-
-/* Программа времени */
-.program_time {
-    font-size: 22px;
-    font-family: "Old Standard TT", serif;
-    font-weight: 700;
-    font-style: normal;
-    text-align: left;
-    color: black;
 }
