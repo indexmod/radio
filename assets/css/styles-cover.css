@@ -60,6 +60,7 @@ html {
 .header-info span {
 	font-size: 20px;
 	margin-right: 20px;
+		margin-left: 20px;
 }
 
 /* Пульсирующий белый трехмерный кружок */
