@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const currentDate = new Date();
   const currentHour = currentDate.getHours().toString().padStart(2, '0');
 
+  // Получаем текущую минуту
+  const currentMinute = currentDate.getMinutes();
+
   // Получаем элементы аудиоплеера и ссылки на аудиофайлы
   const audioPlayer = document.getElementById('audioPlayer');
   const audioLink = document.querySelector(`.audio-link-${currentHour}`);
@@ -10,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
   if (audioLink) {
     // Устанавливаем ссылку на текущую программу в аудиоплеер
     audioPlayer.src = audioLink.href;
+
+    // Рассчитываем текущую минуту в секундах
+    const startTimeInSeconds = currentMinute * 60;
+
+    // Устанавливаем время начала воспроизведения
+    audioPlayer.currentTime = startTimeInSeconds;
     audioPlayer.play();
   } else {
     console.log("Аудиофайл для текущего времени не найден.");
