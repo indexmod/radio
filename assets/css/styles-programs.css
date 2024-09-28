@@ -9,37 +9,35 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Контент располагается один под другим */
+    align-items: flex-start; /* Все элементы по левому краю */
     background-color: transparent;
 }
 
 /* Сфера */
 .sphere {
-    width: 200px;
-    height: 200px;
+    width: 100px; /* Уменьшение сферы до 100px */
+    height: 100px;
     background: radial-gradient(circle at 30% 30%, #ffffff, #dddddd);
     border-radius: 50%;
-    box-shadow: 50px 50px 100px rgba(0, 0, 0, 0.3);
+    box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3); /* Подкорректировал тени, чтобы соответствовало размеру сферы */
     animation: pulse 3s ease-in-out infinite;
-    position: absolute;
-    top: 20px; /* Отступ сверху */
-    left: 20px; /* Отступ по полям контейнера */
-    z-index: 100; /* Сфера будет над контентом */
+    margin: 20px 0 10px 20px; /* Расположил по левому краю с отступами */
+    z-index: 100; /* Сфера находится выше контента */
 }
 
 @keyframes pulse {
     0% {
         transform: scale(1);
-        box-shadow: 50px 50px 100px rgba(0, 0, 0, 0.3);
+        box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3);
     }
     50% {
         transform: scale(1.1);
-        box-shadow: 60px 60px 120px rgba(0, 0, 0, 0.4);
+        box-shadow: 35px 35px 70px rgba(0, 0, 0, 0.4);
     }
     100% {
         transform: scale(1);
-        box-shadow: 50px 50px 100px rgba(0, 0, 0, 0.3);
+        box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3);
     }
 }
 
@@ -110,7 +108,7 @@ a:active {
 .old-standard-tt-bold {
     font-family: "Old Standard TT", serif;
     font-weight: 700;
-    font-style: normal;
+    font-style: normal.
 }
 
 .old-standard-tt-regular-italic {
