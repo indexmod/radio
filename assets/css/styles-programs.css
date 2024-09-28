@@ -35,7 +35,8 @@ body, html {
 /* Заголовки */
 h1, h2, h3 {
   margin-bottom: 15px;           /* Отступ снизу заголовков */
-  font-size: 30px;               /* Размер заголовков 30px */
+  font-size: 25px;               /* Размер заголовков 30px */
+  font-family: "Old Standard TT", serif; /* Используем Old Standard TT для заголовков */
 }
 
 /* Параграфы */

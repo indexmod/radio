@@ -97,11 +97,11 @@ audio {
 ``
 
 
-/* Стили для заголовков h1 и h2 */
-h1, h2, #old-standard-tt-regular {
-  margin-bottom: 10px;
-  font-size: 20;
-  text-transform: uppercase;
+/* Заголовки */
+h1, h2, h3 {
+  margin-bottom: 15px;           /* Отступ снизу заголовков */
+  font-size: 25px;               /* Размер заголовков 30px */
+  font-family: "Old Standard TT", serif; /* Используем Old Standard TT для заголовков */
 }
 
 h3 {
