@@ -9,24 +9,24 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Контент располагается один под другим */
-    align-items: flex-start; /* Все элементы по левому краю */
+    flex-direction: column;
+    align-items: flex-start;
     background-color: transparent;
+    position: relative; /* Для позиционирования сферы */
 }
 
 /* Сфера */
 .sphere {
-    width: 10vw; /* Изменено на относительное значение */
-    height: 10vw; /* Изменено на относительное значение для сохранения пропорций */
-    max-width: 100px; /* Максимальная ширина */
-    max-height: 100px; /* Максимальная высота */
+    width: 100px; /* Фиксированная ширина */
+    height: 100px; /* Фиксированная высота */
     background: radial-gradient(circle at 30% 30%, #ffffff, #dddddd);
     border-radius: 50%;
-    box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3); /* Подкорректировал тени, чтобы соответствовало размеру сферы */
+    box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3);
     animation: pulse 3s ease-in-out infinite;
-    margin: 40px 0 10px 20px; /* Увеличил верхний отступ для правильного размещения */
-    padding: 10px; /* Добавил внутренние отступы */
-    z-index: 100; /* Сфера находится выше контента */
+    position: absolute; /* Сфера позиционируется абсолютно */
+    top: 20px; /* Отступ сверху */
+    right: 20px; /* Отступ справа */
+    z-index: 100; /* Сфера выше контента */
 }
 
 @keyframes pulse {
@@ -44,8 +44,7 @@ body {
     }
 }
 
-body,
-html {
+body, html {
     height: 100%;
     font-family: Monaco, monospace;
     font-size: 20px;
@@ -76,9 +75,7 @@ html {
     }
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     margin-bottom: 15px;
     font-size: 40px;
     font-family: "Old Standard TT", serif;
@@ -97,8 +94,7 @@ a:hover {
     text-decoration: underline;
 }
 
-a:visited,
-a:active {
+a:visited, a:active {
     color: black;
 }
 
