@@ -72,26 +72,25 @@ html {
 	color: black;
 }
 
-/* Мигание красного кружка */
+/* Пульсирующий белый трехмерный кружок */
 .blinking-circle {
-	width: 17px;
-	height: 17px;
-	background-color: #FF0033;
-	border-radius: 50%;
-	animation: blink 5s infinite;
+    width: 17px;
+    height: 17px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #dddddd); /* Градиент для трехмерного эффекта */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Легкая тень для глубины */
+    animation: pulse 5s infinite;
 }
 
-@keyframes blink {
-
-	0%,
-	100% {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 0.1;
-	}
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Обычный размер */
+    }
+    50% {
+        transform: scale(1.2); /* Увеличение при пульсации */
+    }
 }
+
 
 /* Стиль времени */
 #timeDisplay {
