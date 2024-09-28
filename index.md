@@ -26,8 +26,9 @@ title: Эфир Indexmod
     <div class="program-card">
       <p class="program_time">{{ page.start_time }}</p>
       <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
-      <!-- Скрытая ссылка на аудиофайл -->
-      <a class="audio-link" href="{{ page.audio_file }}" style="display:none;">Audio</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+<a class="audio-link-{{ page.start_time | date: '%H' }}" href="{{ page.audio_file }}" style="display:none;">Audio</a>
+
     </div>
   {% endfor %}
 

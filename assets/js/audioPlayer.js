@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Функция для запуска аудиофайла с текущей минуты
   function playAudio(audioFile) {
-    // Установим источник аудиофайла
     audioPlayer.src = audioFile;
 
     // Ждем, пока метаданные загрузятся, чтобы установить текущее время
@@ -13,10 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const startTime = currentMinute * 60; // Переводим минуты в секунды
 
       // Проверяем, что продолжительность аудиофайла больше 0
-      if (audioPlayer.duration > 0) {
-        if (startTime < audioPlayer.duration) {
-          audioPlayer.currentTime = startTime; // Устанавливаем текущее время
-        }
+      if (audioPlayer.duration > 0 && startTime < audioPlayer.duration) {
+        audioPlayer.currentTime = startTime; // Устанавливаем текущее время
       }
       audioPlayer.play(); // Запускаем воспроизведение
       isPlaying = true;
@@ -26,12 +23,22 @@ document.addEventListener('DOMContentLoaded', function () {
     audioPlayer.load();
   }
 
+  // Функция для получения аудиофайла по текущему часу
+  function getAudioFileForCurrentHour() {
+    const currentHour = new Date().getHours(); // Получаем текущий час (0-23)
+
+    // Ищем соответствующую ссылку по ID или классу, основанную на текущем часе
+    const audioLink = document.querySelector(`.audio-link-${currentHour}`); // Например, class="audio-link-0", "audio-link-1", и т.д.
+
+    return audioLink ? audioLink.href : null;
+  }
+
   // Добавляем обработчик клика или касания на любую часть страницы
   function handleInteraction() {
-    const firstAudioFile = document.querySelector('.audio-link').href; // Измените класс на тот, который соответствует вашей разметке
+    const audioFile = getAudioFileForCurrentHour(); // Получаем файл по текущему часу
 
-    if (firstAudioFile) {
-      playAudio(firstAudioFile);
+    if (audioFile) {
+      playAudio(audioFile);
     }
   }
 
@@ -52,10 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
           isPlaying = true;
         }
       } else {
-        // Если аудиофайл ещё не загружен, найдём и запустим
-        const firstAudioFile = document.querySelector('.audio-link').href;
-        if (firstAudioFile) {
-          playAudio(firstAudioFile);
+        const audioFile = getAudioFileForCurrentHour();
+        if (audioFile) {
+          playAudio(audioFile);
         }
       }
     }
