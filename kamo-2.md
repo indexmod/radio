@@ -11,8 +11,6 @@ audio_file: "/assets/audio/program01.mp3"
 type: program
 ---
 
-![Обложка программы](/images/{{ page.permalink }}.gif)
-
 # {{ page.title }}
 
 **Эфир:** {{ page.start_time }} {{ page.author }}  
