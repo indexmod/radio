@@ -178,7 +178,8 @@ a:hover {
 /* Стили для времени программы */
 .program_time {
 	font-weight: 900;
-	color: green;
+	font-family: "Old Standard TT", serif;
+	font-weight: 700;
 	font-size: 20px;
 	/* Увеличили шрифт */
 	margin-bottom: 5px;
