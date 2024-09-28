@@ -5,14 +5,47 @@
     box-sizing: border-box;
 }
 
+/* Общие стили для body и html */
+body, html {
+    height: 100%;
+    font-family: Monaco, monospace;
+    font-size: 20px;
+    color: black;
+    line-height: 1.5;
+    padding: 20px;
+    background: linear-gradient(90deg, silver, #CC9999);
+    background-size: 400% 400%;
+    animation: gradientChange 5s ease infinite;
+}
+
 body {
-    margin: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: transparent;
     position: relative; /* Для размещения сферы поверх контента */
+}
+
+/* Анимация смены градиента */
+@keyframes gradientChange {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Контейнер для контента */
+.container {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    position: relative; /* Оставляем, чтобы сфера не влияла на макет */
 }
 
 /* Сфера */
@@ -29,7 +62,7 @@ body {
     z-index: 100; /* Сфера находится выше контента */
 }
 
-/* Анимация пульсации */
+/* Анимация пульсации сферы */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -42,41 +75,6 @@ body {
     100% {
         transform: scale(1);
         box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.3);
-    }
-}
-
-/* Общие стили для body и html */
-body, html {
-    height: 100%;
-    font-family: Monaco, monospace;
-    font-size: 20px;
-    color: black;
-    line-height: 1.5;
-    padding: 20px;
-    background: linear-gradient(90deg, silver, #CC9999);
-    background-size: 400% 400%;
-    animation: gradientChange 5s ease infinite;
-}
-
-/* Контейнер для контента */
-.container {
-    margin: 20px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    position: relative; /* Оставляем, чтобы сфера не влияла на макет */
-}
-
-/* Анимация смены градиента */
-@keyframes gradientChange {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
     }
 }
 
@@ -107,7 +105,7 @@ a:active {
     color: black;
 }
 
-/* Шрифты */
+/* Шрифты Old Standard TT */
 .old-standard-tt-regular {
     font-family: "Old Standard TT", serif;
     font-weight: 400;
@@ -124,4 +122,14 @@ a:active {
     font-family: "Old Standard TT", serif;
     font-weight: 400;
     font-style: italic;
+}
+
+/* Программа времени */
+.program_time {
+    font-size: 22px;
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    color: black;
 }
