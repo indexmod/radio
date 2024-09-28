@@ -12,7 +12,7 @@ body, html {
   color: black;                   /* Цвет текста */
   line-height: 1.5;               /* Высота строки */
   padding: 20px;                  /* Отступы вокруг текста */
-  background: linear-gradient(45deg, silver, grey); /* Начальный градиентный фон */
+  background: linear-gradient(90deg, silver, #CC9999); /* Начальный градиентный фон */
   background-size: 400% 400%;     /* Увеличенный размер градиента для анимации */
   animation: gradientChange 5s ease infinite; /* Анимация градиента */
 }
