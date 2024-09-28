@@ -3,4 +3,7 @@ timezone: Europe/Moscow
 description: A fashion and art chainpædia
 cname: indexmod.xyz
 url: 'https://indexmod.xyz'
+
+disqus:
+  shortname: "efir-indexmod"  # Замените на ваш shortname из Disqus
 baseurl: ''
