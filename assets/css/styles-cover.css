@@ -1,183 +1,229 @@
 /* Сброс базовых стилей */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /* Стили для body и html — основные стили страницы */
-body, html {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow-y: auto;
-  font-family: Monaco, monospace;
-  color: #333333;
-  padding: 5%; /* Универсальные поля */
-  position: relative;
+body,
+html {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	overflow-y: auto;
+	font-family: Monaco, monospace;
+	color: #333333;
+	padding: 5%;
+	/* Универсальные поля */
+	position: relative;
 }
 
 /* Анимация градиента фона */
 .gradient {
-  position: fixed;
-  top: -20%; /* Делаем запас сверху */
-  left: 0;
-  width: 100%;
-  height: 140%; /* Увеличиваем высоту за пределы экрана */
-  background: linear-gradient(90deg, #CC9999, silver);
-  background-size: 400% 400%;
-  animation: gradientChange 10s ease infinite;
-  z-index: -1;
+	position: fixed;
+	top: -20%;
+	/* Делаем запас сверху */
+	left: 0;
+	width: 100%;
+	height: 140%;
+	/* Увеличиваем высоту за пределы экрана */
+	background: linear-gradient(90deg, #CC9999, silver);
+	background-size: 400% 400%;
+	animation: gradientChange 10s ease infinite;
+	z-index: -1;
 }
 
 @keyframes gradientChange {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+	0%,
+	100% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
 }
 
 /* Контейнер для индикатора и времени */
 .header-info {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: silver;
-  color: black;
-  padding: 10px;
-  display: inline-flex; /* Меняем на inline-flex для адаптивной ширины */
-  align-items: center;
-  z-index: 10;
-  gap: 10px;
-  padding-right: 10px; /* Добавляем дополнительный отступ справа */
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: silver;
+	color: black;
+	padding: 10px;
+	display: inline-flex;
+	/* Меняем на inline-flex для адаптивной ширины */
+	align-items: center;
+	z-index: 10;
+	gap: 10px;
+	padding-right: 10px;
+	/* Добавляем дополнительный отступ справа */
 }
 
 
-
 .header-info span {
-  font-size: 20px;
-  margin-right: 20px;
-  color: black;
+	font-size: 20px;
+	margin-right: 20px;
+	color: black;
 }
 
 /* Мигание красного кружка */
 .blinking-circle {
-  width: 17px;
-  height: 17px;
-  background-color: #FF0033;
-  border-radius: 50%;
-  animation: blink 5s infinite;
+	width: 17px;
+	height: 17px;
+	background-color: #FF0033;
+	border-radius: 50%;
+	animation: blink 5s infinite;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.1; }
+
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.1;
+	}
 }
 
 /* Стиль времени */
 #timeDisplay {
-  font-weight: 900;
-  color: green; /* Измените цвет на белый для контрастности */
-  font-size: 20px; /* Размер шрифта как в карточке */
+	font-weight: 900;
+	color: green;
+	/* Измените цвет на белый для контрастности */
+	font-size: 20px;
+	/* Размер шрифта как в карточке */
 }
 
 /* Скрытый аудиоплеер */
 audio {
-  display: none;
+	display: none;
 }
 
 .blinking {
-    animation: blink 5s step-end infinite;
+	animation: blink 5s step-end infinite;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
 }
+
 ``
 
-
 /* Заголовки */
-h1, h2, h3 {
-  margin-bottom: 15px;           /* Отступ снизу заголовков */
-  font-size: 25px;               /* Размер заголовков 30px */
-  font-family: "Old Standard TT", serif; /* Используем Old Standard TT для заголовков */
+h1,
+h2,
+h3 {
+	margin-bottom: 15px;
+	/* Отступ снизу заголовков */
+	font-size: 25px;
+	/* Размер заголовков 30px */
+	font-family: "Old Standard TT", serif;
+	/* Используем Old Standard TT для заголовков */
 }
 
 h3 {
-  margin-bottom: 0px;
-  font-size: 23px;
+	margin-bottom: 0px;
+	font-size: 23px;
 }
 
 /* Стили для ссылок */
 a {
-  color: black;
-  font-size: 16px;
-  text-decoration: none;
+	color: black;
+	font-size: 16px;
+	text-decoration: none;
 }
 
 a:hover {
-  color: black;
-  text-decoration: none;
+	color: black;
+	text-decoration: none;
 }
 
 /* Контейнер для карточек программ */
 .programs-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Полная ширина экрана */
-  gap: 5px; /* Расстояние между карточками */
-  width: 100%;
-  padding: 20px;
-  margin: 0; /* Убираем отступы */
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	/* Полная ширина экрана */
+	gap: 5px;
+	/* Расстояние между карточками */
+	width: 100%;
+	padding: 20px;
+	margin: 0;
+	/* Убираем отступы */
 }
 
 /* Стили для карточек программ */
 .program-card {
-  padding: 15px;
-  border: none; /* Убираем рамки карточек */
-  background-color: transparent;
-  text-align: left;
+	padding: 15px;
+	border: none;
+	/* Убираем рамки карточек */
+	background-color: transparent;
+	text-align: left;
 }
 
 /* Стили для времени программы */
 .program_time {
-  font-weight: 900;
-  color: green;
-  font-size: 20px; /* Увеличили шрифт */
-  margin-bottom: 5px;
+	font-weight: 900;
+	color: green;
+	font-size: 20px;
+	/* Увеличили шрифт */
+	margin-bottom: 5px;
 }
 
 /* Респонсивность для небольших устройств */
 @media (max-width: 768px) {
-  .programs-grid {
-    grid-template-columns: 1fr; /* При сужении в один столбик */
-  }
+	.programs-grid {
+		grid-template-columns: 1fr;
+		/* При сужении в один столбик */
+	}
 }
 
 .blinking {
-    animation: blink 1s step-end infinite;
+	animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
 }
 
 
 .old-standard-tt-regular {
-  font-family: "Old Standard TT", serif;
-  font-weight: 400;
-  font-style: normal;
+	font-family: "Old Standard TT", serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .old-standard-tt-bold {
-  font-family: "Old Standard TT", serif;
-  font-weight: 700;
-  font-style: normal;
+	font-family: "Old Standard TT", serif;
+	font-weight: 700;
+	font-style: normal;
 }
 
 .old-standard-tt-regular-italic {
-  font-family: "Old Standard TT", serif;
-  font-weight: 400;
-  font-style: italic;
+	font-family: "Old Standard TT", serif;
+	font-weight: 400;
+	font-style: italic;
 }
