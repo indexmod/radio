@@ -1,69 +1,38 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function() {
+  // Получаем текущий час
+  const currentDate = new Date();
+  const currentHour = currentDate.getHours().toString().padStart(2, '0');
+
+  // Получаем элементы аудиоплеера и ссылки на аудиофайлы
   const audioPlayer = document.getElementById('audioPlayer');
-  let isPlaying = false;
+  const audioLink = document.querySelector(`.audio-link-${currentHour}`);
 
-  // Функция для запуска аудиофайла с текущей минуты
-  function playAudio(audioFile) {
-    audioPlayer.src = audioFile;
-
-    // Ждем, пока метаданные загрузятся, чтобы установить текущее время
-    audioPlayer.addEventListener('loadedmetadata', function () {
-      const currentMinute = new Date().getMinutes(); // Получаем текущую минуту
-      const startTime = currentMinute * 60; // Переводим минуты в секунды
-
-      // Проверяем, что продолжительность аудиофайла больше 0
-      if (audioPlayer.duration > 0 && startTime < audioPlayer.duration) {
-        audioPlayer.currentTime = startTime; // Устанавливаем текущее время
-      }
-      audioPlayer.play(); // Запускаем воспроизведение
-      isPlaying = true;
-    });
-
-    // Загружаем и начинаем воспроизведение
-    audioPlayer.load();
+  if (audioLink) {
+    // Устанавливаем ссылку на текущую программу в аудиоплеер
+    audioPlayer.src = audioLink.href;
+    audioPlayer.play();
+  } else {
+    console.log("Аудиофайл для текущего времени не найден.");
   }
 
-  // Функция для получения аудиофайла по текущему часу
-  function getAudioFileForCurrentHour() {
-    const currentHour = new Date().getHours(); // Получаем текущий час (0-23)
-
-    // Ищем соответствующую ссылку по ID или классу, основанную на текущем часе
-    const audioLink = document.querySelector(`.audio-link-${currentHour}`); // Например, class="audio-link-0", "audio-link-1", и т.д.
-
-    return audioLink ? audioLink.href : null;
-  }
-
-  // Добавляем обработчик клика или касания на любую часть страницы
-  function handleInteraction() {
-    const audioFile = getAudioFileForCurrentHour(); // Получаем файл по текущему часу
-
-    if (audioFile) {
-      playAudio(audioFile);
+  // Функция для переключения воспроизведения/паузы
+  function togglePlayPause() {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+    } else {
+      audioPlayer.pause();
     }
   }
 
-  // Добавляем обработчик клика и касания
-  document.body.addEventListener('click', handleInteraction);
-  document.body.addEventListener('touchstart', handleInteraction);
+  // Обработчик кликов и тапов
+  document.addEventListener("click", togglePlayPause);
+  document.addEventListener("touchstart", togglePlayPause);
 
-  // Добавляем обработчик нажатия пробела
-  document.body.addEventListener('keydown', function (event) {
-    if (event.code === 'Space') {
-      event.preventDefault(); // Отключаем прокрутку при нажатии пробела
-      if (audioPlayer.src && audioPlayer.src !== "") {
-        if (isPlaying) {
-          audioPlayer.pause(); // Ставим на паузу
-          isPlaying = false;
-        } else {
-          audioPlayer.play(); // Запускаем воспроизведение
-          isPlaying = true;
-        }
-      } else {
-        const audioFile = getAudioFileForCurrentHour();
-        if (audioFile) {
-          playAudio(audioFile);
-        }
-      }
+  // Обработчик нажатий клавиш
+  document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+      event.preventDefault(); // Предотвращаем прокрутку страницы при нажатии пробела
+      togglePlayPause();
     }
   });
 });
