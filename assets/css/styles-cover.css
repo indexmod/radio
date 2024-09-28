@@ -54,7 +54,6 @@ html {
 	top: 0;
 	left: 0;
 	background-color: silver;
-	color: black;
 	padding: 10px;
 	display: inline-flex;
 	/* Меняем на inline-flex для адаптивной ширины */
@@ -69,6 +68,7 @@ html {
 .header-info span {
 	font-size: 20px;
 	margin-right: 20px;
+	margin-left: 20px;
 	color: black;
 }
 
@@ -122,8 +122,6 @@ audio {
 		opacity: 0;
 	}
 }
-
-``
 
 /* Заголовки */
 h1,
