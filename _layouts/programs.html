@@ -47,28 +47,10 @@
     <br>
       <br>
         <br>
-          <br>
+      
     <br> {{ content }}
     <br>
     <br>
-    <br>
-    {% if page.comments %}
-  <div id="disqus_thread"></div>
-  <script>
-      var disqus_config = function () {
-          this.page.url = '{{ site.url }}{{ page.url }}';  // Укажите URL страницы
-          this.page.identifier = '{{ page.id }}';  // Уникальный идентификатор страницы (можно использовать slug)
-      };
-      (function() {  // Этот код вставляется как есть
-          var d = document, s = d.createElement('script');
-          s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-      })();
-  </script>
-  <noscript>Пожалуйста, включите JavaScript для просмотра <a href="https://disqus.com/?ref_noscript">комментариев, поддерживаемых Disqus.</a></noscript>
-{% endif %}
-    <script id="dsq-count-scr" src="//efir-indexmod.disqus.com/count.js" async></script>
     <script src="{{ '/assets/js/program-audio.js' | relative_url }}"></script>
 </body>
 
