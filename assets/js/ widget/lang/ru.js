@@ -19,4 +19,8 @@ window.CUSDIS_LOCALE = {
 
   // Специальные метки
   mod_badge: 'МОД',
+
+  // Дополнительные переводы для reply
+  reply_placeholder: 'Ответить...',
+  reply_btn: 'Ответить'
 };
