@@ -11,7 +11,9 @@ title: Эфир Indexmod
   <span><h3 class="old-standard-tt-regular">{{ site.title }}</h3></span>
   <div class="blinking-circle"></div>
   <div id="timeDisplay"></div>
+  <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 10px; height: 10px;" onclick="location.reload()">
 </div>
+
 
 <!-- Аудиоплеер, скрытый по умолчанию -->
 <audio id="audioPlayer" controls></audio>
