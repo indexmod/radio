@@ -46,17 +46,19 @@
     <br> {{ content }}
     <hr> {% include footer.html %}
     <br>
-    {%- if page.permalink -%}
-    <div id="cusdis_thread"
-         data-host="https://cusdis.com"
-         data-app-id="5f841618-1fe2-4121-b62b-c9c51824bd7f"
-         data-page-id="{{ page.permalink }}"
-         data-page-url="{{ site.url }}{{ page.permalink }}"
-         data-lang="ru"> <!-- Здесь установлен русский язык -->
-         data-page-title="{{ page.title }}">
-    </div>
-    <script defer src="https://cusdis.com/js/cusdis.es.js"></script>
-    {%- endif -%}
+    {{%- if page.permalink -%}
+<div id="cusdis_thread"
+     data-host="https://cusdis.com"
+     data-app-id="5f841618-1fe2-4121-b62b-c9c51824bd7f"
+     data-page-id="{{ page.permalink }}"
+     data-page-url="{{ site.url }}{{ page.permalink }}"
+     data-page-title="{{ page.title }}">
+</div>
+
+<!-- Путь к вашему файлу локализации -->
+<script defer src="{{ '/assets/js/widget/lang/ru.js' | relative_url }}"></script>
+<script defer src="https://cusdis.com/js/cusdis.es.js"></script>
+{%- endif -%}
     <br>
     <br>
     <br>
