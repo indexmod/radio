@@ -1,6 +1,6 @@
 window.CUSDIS_LOCALE = {
   nickname: "Ник",
-  email: "Почта",
+  email: "@ ...по желанию",
   reply: "Ответить...",
   comment: "Комментарий",
   powered_by: 'Комментарии by Cusdis',
