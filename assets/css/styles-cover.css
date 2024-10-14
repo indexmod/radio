@@ -190,8 +190,9 @@ a:hover {
 
 /* Кнопка в стиле клавиши Spacebar */
 .spacebar-btn {
-	width: 300px; /* Ширина кнопки */
-	height: 50px; /* Высота кнопки */
+	width: 100%; /* Кнопка занимает всю ширину контейнера */
+	max-width: 300px; /* Максимальная ширина кнопки */
+	height: 50px;
 	background-color: #e0e0e0;
 	border-radius: 12px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -203,9 +204,24 @@ a:hover {
 	color: #333;
 	border: none;
 	cursor: pointer;
-	font-family: Monaco, monospace; /* Шрифт Monaco */
+	font-family: Monaco, monospace;
 }
 
 .spacebar-btn:active {
 	background-color: #d0d0d0;
+}
+
+/* Респонсивность для узких экранов */
+@media (max-width: 600px) {
+	.spacebar-btn {
+		max-width: 200px; /* Уменьшение ширины кнопки на узких экранах */
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 400px) {
+	.spacebar-btn {
+		max-width: 150px; /* Ещё большее уменьшение на очень узких экранах */
+		font-size: 14px;
+	}
 }
