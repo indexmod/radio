@@ -1,7 +1,7 @@
 ---
 layout: programs
 title:  Гимн пенсионеров
-start_time: "01:50"
+start_time: "01:58"
 permalink: gimn-pensionera
 author: Антонина Георгиевна
 location: Москва
