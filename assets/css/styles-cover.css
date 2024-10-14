@@ -50,7 +50,7 @@ html {
 	left: 0;
 	background-color: silver;
 	color: black;
-	padding: 10px 10px 10px 0; /* Сократил padding */
+	padding: 10px 10px 10px 0;
 	display: inline-flex;
 	align-items: center;
 	z-index: 10;
@@ -60,7 +60,7 @@ html {
 .header-info span {
 	font-size: 20px;
 	margin-right: 20px;
-		margin-left: 20px;
+	margin-left: 20px;
 }
 
 /* Пульсирующий белый трехмерный кружок */
@@ -85,7 +85,7 @@ html {
 
 /* Стиль времени */
 #timeDisplay {
-	font-weight: bold; /* Используйте bold вместо 900 */
+	font-weight: bold;
 	color: green;
 	font-size: 20px;
 }
@@ -97,7 +97,7 @@ audio {
 
 /* Пульсация текста */
 .blinking {
-	animation: blink 1s step-end infinite; /* Упрощено время анимации */
+	animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
@@ -155,7 +155,7 @@ a:hover {
 
 /* Стили для времени программы */
 .program_time {
-	font-weight: bold; /* Используйте bold вместо 700 */
+	font-weight: bold;
 	font-family: "Old Standard TT", serif;
 	font-size: 20px;
 	margin-bottom: 5px;
@@ -186,4 +186,26 @@ a:hover {
 .old-standard-tt-regular-italic {
 	font-weight: 400;
 	font-style: italic;
+}
+
+/* Кнопка в стиле клавиши Spacebar */
+.spacebar-btn {
+	width: 300px; /* Ширина кнопки */
+	height: 50px; /* Высота кнопки */
+	background-color: #e0e0e0;
+	border-radius: 12px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	border: none;
+	cursor: pointer;
+	font-family: Monaco, monospace; /* Шрифт Monaco */
+}
+
+.spacebar-btn:active {
+	background-color: #d0d0d0;
 }
