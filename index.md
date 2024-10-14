@@ -22,6 +22,9 @@ title: Эфир Indexmod
 <div id="programsContainer" class="programs-grid">
   <!-- Цикл по страницам с фильтрацией и сортировкой -->
   {% assign mypages = site.html_pages | where: "type", "program" | sort: "start_time" %}
+<!-- Кнопка Пауза с подсказкой -->
+  <button class="spacebar-btn" title="Для паузы тоже клавиша пробел">Пауза</button>
+
 
   <!-- Вывод программ в сетке 6 на 4 -->
   {% for page in mypages %}
