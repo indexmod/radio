@@ -14,7 +14,8 @@ title: Эфир Indexmod
   <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 2px; height: 19px;" onclick="location.reload()">
 </div>
 
-
+<!-- Кнопка Пауза с подсказкой -->
+  <button class="spacebar-btn" title="Повторяет пробел на клавиатуре">Пауза</button>
 <!-- Аудиоплеер, скрытый по умолчанию -->
 <audio id="audioPlayer" controls></audio>
 
@@ -22,9 +23,6 @@ title: Эфир Indexmod
 <div id="programsContainer" class="programs-grid">
   <!-- Цикл по страницам с фильтрацией и сортировкой -->
   {% assign mypages = site.html_pages | where: "type", "program" | sort: "start_time" %}
-<!-- Кнопка Пауза с подсказкой -->
-  <button class="spacebar-btn" title="Для паузы тоже клавиша пробел">Пауза</button>
-
 
   <!-- Вывод программ в сетке 6 на 4 -->
   {% for page in mypages %}
