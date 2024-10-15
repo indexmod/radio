@@ -214,8 +214,8 @@ a:hover {
 
 /* Стиль для изображения Play и Pause */
 .play-pause-icon {
-		height: 50px;
-		max-height: 50px; /* Максимальная высота изображения */
+		height: 15px;
+		max-height: 15px; /* Максимальная высота изображения */
     width: auto;
 }
 
