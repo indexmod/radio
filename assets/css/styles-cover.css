@@ -196,7 +196,7 @@ a:hover {
 	transform: translate(-50%, 50%); /* Центрирование с помощью transform */
 	width: 90%; /* Кнопка занимает 90% ширины экрана */
 	max-width: 600px; /* Максимальная ширина кнопки */
-	height: 70px;
+	height: 80px;
 	background-color: lavender;
 	border-radius: 12px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -221,7 +221,7 @@ a:hover {
 
 
 .spacebar-btn:active {
-	background-color: white;
+	background-color: silver;
 }
 
 /* Респонсивность для узких экранов */
