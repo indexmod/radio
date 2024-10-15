@@ -212,20 +212,13 @@ a:hover {
 	z-index: 100; /* Чтобы кнопка была поверх контента */
 }
 
-/* Стиль для треугольника Play */
-.play-icon {
-    font-size: 28px; /* Размер треугольника */
-    line-height: 1;
-    margin-right: 10px; /* Расстояние между символами */
+/* Стиль для изображения Play и Pause */
+.play-pause-icon {
+    height: 100%;
+    max-height: 50px; /* Максимальная высота изображения */
+    width: auto;
 }
 
-/* Стиль для знака паузы, подогнанный под высоту треугольника */
-.pause-icon {
-    font-size: 28px; /* Размер, равный треугольнику */
-    line-height: 1;
-    transform: scaleY(1.2); /* Вертикальное масштабирование для точного совпадения */
-    margin-left: 10px; /* Расстояние между символами */
-}
 
 .spacebar-btn:active {
 	background-color: #d0d0d0;
