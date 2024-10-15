@@ -212,6 +212,13 @@ a:hover {
 	z-index: 100; /* Чтобы кнопка была поверх контента */
 }
 
+/* Стиль для символов Play и Pause */
+.play-pause-icons {
+    font-size: 28px; /* Размер шрифта для иконок */
+    line-height: 1; /* Чтобы они были одинаковой высоты */
+    margin: 0 5px; /* Расстояние между иконками */
+}
+
 .spacebar-btn:active {
 	background-color: #d0d0d0;
 }

@@ -15,7 +15,10 @@ title: Эфир Indexmod
 </div>
 
 <!-- Кнопка Пауза с подсказкой -->
-  <button class="spacebar-btn" title="Повторяет пробел на клавиатуре">Пауза</button>
+<button class="spacebar-btn" title="Повторяет пробел на клавиатуре">
+  <span class="play-pause-icons">▶</span>
+  <span class="play-pause-icons">‖</span>
+</button>
 <!-- Аудиоплеер, скрытый по умолчанию -->
 <audio id="audioPlayer" controls></audio>
 
