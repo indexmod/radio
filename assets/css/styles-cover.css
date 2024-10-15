@@ -188,10 +188,14 @@ a:hover {
 	font-style: italic;
 }
 
-/* Кнопка в стиле клавиши Spacebar */
+/* Плавающая кнопка */
 .spacebar-btn {
-	width: 100%; /* Кнопка занимает всю ширину контейнера */
-	max-width: 300px; /* Максимальная ширина кнопки */
+	position: fixed; /* Фиксированное положение */
+	bottom: 50%; /* Центрирование по вертикали (50% от высоты окна) */
+	left: 50%; /* Центрирование по горизонтали */
+	transform: translate(-50%, 50%); /* Центрирование с помощью transform */
+	width: 90%; /* Кнопка занимает 90% ширины экрана */
+	max-width: 600px; /* Максимальная ширина кнопки */
 	height: 50px;
 	background-color: #e0e0e0;
 	border-radius: 12px;
@@ -205,6 +209,7 @@ a:hover {
 	border: none;
 	cursor: pointer;
 	font-family: Monaco, monospace;
+	z-index: 100; /* Чтобы кнопка была поверх контента */
 }
 
 .spacebar-btn:active {
@@ -214,14 +219,14 @@ a:hover {
 /* Респонсивность для узких экранов */
 @media (max-width: 600px) {
 	.spacebar-btn {
-		max-width: 200px; /* Уменьшение ширины кнопки на узких экранах */
+		max-width: 300px; /* Уменьшение ширины кнопки на узких экранах */
 		font-size: 16px;
 	}
 }
 
 @media (max-width: 400px) {
 	.spacebar-btn {
-		max-width: 150px; /* Ещё большее уменьшение на очень узких экранах */
+		max-width: 250px; /* Ещё большее уменьшение на очень узких экранах */
 		font-size: 14px;
 	}
 }

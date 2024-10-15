@@ -1,8 +1,8 @@
 ---
 layout: programs
-title:  Гимн пенсионеров
+title:  Джингл
 start_time: "01:58"
-permalink: gimn-pensionera
+permalink: add
 author: Антонина Георгиевна
 location: Москва
 date: "2024-10-14"
@@ -16,7 +16,7 @@ type: program
 **Эфир:** {{ page.start_time }} {{ page.author }}  
 **Локация:** {{ page.location }}
 
-Антонина Георгиевна напевает "Гимн пенсионеров"
+Антонина Георгиевна напевает "Гимн пенсионера" — это тестовая вставка для джингла или анонса
 
 
 # Инструкция — аудио:
