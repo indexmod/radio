@@ -196,7 +196,7 @@ a:hover {
 	transform: translate(-50%, 50%); /* Центрирование с помощью transform */
 	width: 90%; /* Кнопка занимает 90% ширины экрана */
 	max-width: 600px; /* Максимальная ширина кнопки */
-	height: 50px;
+	height: 70px;
 	background-color: silver;
 	border-radius: 12px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -214,14 +214,14 @@ a:hover {
 
 /* Стиль для изображения Play и Pause */
 .play-pause-icon {
-		height: 15px;
-		max-height: 15px; /* Максимальная высота изображения */
+		height: 30px;
+		max-height: 30px; /* Максимальная высота изображения */
     width: auto;
 }
 
 
 .spacebar-btn:active {
-	background-color: #d0d0d0;
+	background-color: white;
 }
 
 /* Респонсивность для узких экранов */
