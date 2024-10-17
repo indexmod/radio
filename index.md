@@ -11,11 +11,11 @@ title: Эфир Indexmod
   <span>{{ site.title }}</span>
   <div class="blinking-circle"></div>
   <div id="timeDisplay"></div>
-  <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 2px; height: 19px;" onclick="location.reload()">
+  <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 5px; height: 21px;" onclick="location.reload()">
 </div>
 
 <!-- Кнопка Пауза с подсказкой -->
-<button class="spacebar-btn" title="Повторяет пробел на клавиатуре">
+<button class="spacebar-btn" title="Клавиша пробел">
   <img src="play.png" alt="Play and Pause" class="play-pause-icon">
 </button>
 <!-- Аудиоплеер, скрытый по умолчанию -->
