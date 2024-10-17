@@ -76,8 +76,8 @@ html {
 }
 
 .program_icon {
-	width: 20px;
-	height: auto;
+	width: auto;
+	height: 50px;
 }
 
 @keyframes pulse {
