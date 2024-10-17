@@ -9,6 +9,7 @@ date: "2024-10-14"
 guest:
 audio_file: "/assets/audio/gimn-pensionera.m4a"
 type: program
+exclude: true
 ---
 
 # {{ page.title }}
