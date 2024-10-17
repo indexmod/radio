@@ -175,7 +175,6 @@ a:hover {
 	}
 }
 
-/* Плавающая кнопка */
 .spacebar-btn {
 	position: fixed;
 	bottom: 15%;
@@ -186,7 +185,7 @@ a:hover {
 	height: 40px;
 	background-color: white;
 	border-radius: 12px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1); /* Четкая тень */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -194,6 +193,24 @@ a:hover {
 	border: none;
 	cursor: pointer;
 	z-index: 100;
+	transition: box-shadow 0.2s ease, transform 0.2s ease; /* Анимация для тени и нажатия */
+}
+
+.spacebar-btn:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	background: linear-gradient(145deg, #e0e0e0, #ffffff); /* Боковая грань */
+	z-index: -1;
+}
+
+.spacebar-btn:active {
+	box-shadow: none; /* Тень исчезает при нажатии */
+	transform: translate(-50%, 55%); /* Легкий эффект нажатия */
 }
 
 /* Стиль для изображения Play и Pause */
@@ -201,10 +218,6 @@ a:hover {
 	height: 15px;
 	max-height: 15px;
 	width: auto;
-}
-
-.spacebar-btn:active {
-	background-color: silver;
 }
 
 /* Респонсивность для узких экранов */
