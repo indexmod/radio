@@ -75,6 +75,11 @@ html {
 	animation: pulse 7s infinite;
 }
 
+.program_icon {
+	width: 20px;
+	height: auto;
+}
+
 @keyframes pulse {
 	0%,
 	100% {
