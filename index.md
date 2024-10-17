@@ -29,6 +29,7 @@ title: Эфир Indexmod
   <!-- Вывод программ в сетке 6 на 4 -->
   {% for page in mypages %}
     <div class="program-card">
+    <p class="program_icon">{{site.url}}/images{{page.permalink}}.gif</p>
       <p class="program_time">{{ page.start_time }}</p>
       <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
