@@ -8,7 +8,7 @@ title: Эфир Indexmod
 
 <!-- Контейнер с заголовком, мигающим кружком и временем -->
 <div class="header-info">
-  <span><h3 class="old-standard-tt-regular">{{ site.title }}</h3></span>
+  <span>{{ site.title }}</span>
   <div class="blinking-circle"></div>
   <div id="timeDisplay"></div>
   <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 2px; height: 19px;" onclick="location.reload()">
@@ -29,7 +29,7 @@ title: Эфир Indexmod
   <!-- Вывод программ в сетке 6 на 4 -->
   {% for page in mypages %}
     <div class="program-card">
-    <p class="program_icon">{{site.url}}/images{{page.permalink}}.gif</p>
+    <p class="program_icon">/images{{page.permalink}}.gif</p>
       <p class="program_time">{{ page.start_time }}</p>
       <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
