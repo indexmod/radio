@@ -174,58 +174,43 @@ a:hover {
 		grid-template-columns: 1fr;
 	}
 }
+
 .spacebar-btn {
-  position: fixed;
-  bottom: 15%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  width: 90%;
-  max-width: 600px;
-  height: 40px;
-  background-color: #F3EDED;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: normal;
-  border: none;
-  cursor: pointer;
-  z-index: 100;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+	position: fixed;
+	bottom: 15%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	width: 90%;
+	max-width: 600px;
+	height: 40px;
+	background-color: transparent;
+	border-radius: 12px;
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1); /* Четкая тень */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: normal;
+	border: none;
+	cursor: pointer;
+	z-index: 100;
+	transition: box-shadow 0.2s ease, transform 0.2s ease; /* Анимация для тени и нажатия */
 }
+
 .spacebar-btn:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #e0e0e0, #ffffff);
-  z-index: -1;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	background: linear-gradient(145deg, #e0e0e0, #ffffff); /* Боковая грань */
+	z-index: -1;
 }
-.spacebar-btn {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.spacebar-btn:hover {
-  transform: translate(-50%, 45%);
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.2);
-}
+
 .spacebar-btn:active {
-  box-shadow: none;
-  transform: translate(-50%, 55%);
-}
-
-@media (max-width: 600px) {
-  .spacebar-btn {
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 400px) {
-  .spacebar-btn {
-    max-width: 250px;
-  }
+	box-shadow: none; /* Тень исчезает при нажатии */
+	transform: translate(-50%, 55%); /* Легкий эффект нажатия */
 }
 
 /* Стиль для изображения Play и Pause */

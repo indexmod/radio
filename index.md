@@ -38,6 +38,7 @@ title: Эфир Indexmod
     </div>
   {% endfor %}
 
+
 <!-- Подключение скриптов -->
 <script src="{{ site.baseurl }}/assets/js/audioPlayer.js"></script>
 <script src="{{ site.baseurl }}/assets/js/timeDisplay.js"></script>

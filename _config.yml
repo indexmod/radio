@@ -3,4 +3,6 @@ timezone: Europe/Moscow
 description: A fashion and art chainpædia
 cname: indexmod.xyz
 url: 'https://indexmod.xyz'
+sass:
+  sass_dir: _sass
 baseurl: ''

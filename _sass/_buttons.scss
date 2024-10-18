@@ -1,0 +1,30 @@
+// _sass/_buttons.scss
+
+.button {
+    background-color: $accent;
+    color: $text;
+    padding: 10px 2// _sass/_buttons.scss
+
+.button {
+    background-color: $accent;
+    color: $text;
+    padding: 10px 20px;
+    border: $borderWidth solid $text;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken($accent, 10%);
+    }
+}
+0px;
+    border: $borderWidth solid $text;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken($accent, 10%);
+    }
+}
