@@ -15,9 +15,9 @@ title: Эфир Indexmod
 </div>
 
 <!-- Кнопка Пауза с подсказкой -->
-<button class="spacebar-btn" title="Клавиша пробел">
-  <img src="play.png" alt="Play and Pause" class="play-pause-icon">
-</button>
+
+{% include spacebar.html %}
+
 <!-- Аудиоплеер, скрытый по умолчанию -->
 <audio id="audioPlayer" controls></audio>
 
@@ -29,7 +29,7 @@ title: Эфир Indexmod
   <!-- Вывод программ в сетке 6 на 4 -->
   {% for page in mypages %}
     <div class="program-card">
-    <img class="program_icon" src="/images/{{ page.permalink | remove: '/' }}.gif" alt="Program Icon">
+    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/{{ page.permalink | remove: '/' }}.gif" alt="Program Icon"> -->
       <p class="program_time">{{ page.start_time }}</p>
       <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->

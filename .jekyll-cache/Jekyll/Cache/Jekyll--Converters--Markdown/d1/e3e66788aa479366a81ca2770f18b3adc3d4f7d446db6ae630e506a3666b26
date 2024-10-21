@@ -1,44 +1,4 @@
-  <!-- Макет: обложка  -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
-</style>
-
-  <!-- Отключение кэширования -->
- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
- <meta http-equiv="Pragma" content="no-cache">
- <meta http-equiv="Expires" content="0">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Эфир Indexmod</title>
-  <link rel="stylesheet" href="/assets/css/styles-cover.css">
-    <!-- Фавикон  -->
-
-  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-</head>
-<body>
-  <!-- Основной градиентный фон -->
+I"%5<!-- Основной градиентный фон -->
 <div class="gradient"></div>
 
 <!-- Контейнер с заголовком, мигающим кружком и временем -->
@@ -51,71 +11,6 @@
 
 <!-- Кнопка Пауза с подсказкой -->
 
-<p><a href="#" class="button">Click Me</a></p>
-
-<style>
-  @import url('https://fonts.googleapis.com/css?family=Rubik+One');
-
-  /* Стили для кнопки */
-  .button::after, .button::before {
-    position: absolute;
-    content: "";
-    transition: all 0.5s;
-  }
-
-  .button {
-    display: inline-block;
-    padding: 20px 40px;
-    color: white;
-    position: fixed; /* Используем fixed для плавающей кнопки */
-    bottom: 40px; /* Закрепляем кнопку на 40 пикселей выше нижнего края */
-    left: 50%; /* Центрируем кнопку по горизонтали */
-    transform: translateX(-50%); /* Сдвигаем кнопку влево на половину её ширины */
-    vertical-align: middle;
-    font-family: "Rubik One", sans-serif;
-    text-decoration: none;
-    font-size: 4vw;
-    transition: all 0.5s;
-    background-color: #3498db;
-}
-
-
-  .button::before {
-    bottom: -15px;
-    height: 15px;
-    width: 100%;
-    left: 8px;
-    transform: skewX(45deg);
-    background-color: #196090;
-  }
-
-  .button::after {
-    right: -15px;
-    height: 100%;
-    width: 15px;
-    bottom: -8px;
-    transform: skewY(45deg);
-    background-color: #124364;
-  }
-
-  .button:active {
-    margin-left: 10px;
-    margin-top: 10px;
-  }
-
-  .button:active::before {
-    bottom: -5px;
-    height: 5px;
-    left: 3px;
-  }
-
-  .button:active::after {
-    right: -5px;
-    width: 5px;
-    bottom: -3px;
-  }
-</style>
-
 <!-- Аудиоплеер, скрытый по умолчанию -->
 <audio id="audioPlayer" controls=""></audio>
 
@@ -127,7 +22,7 @@
   <!-- Вывод программ в сетке 6 на 4 -->
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/pil.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/pil.gif" alt="Program Icon" />
       <p class="program_time">00:00</p>
       <a href="pil">П Ь I Л Ь (Рик Уэст)</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -136,7 +31,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/01.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/01.gif" alt="Program Icon" />
       <p class="program_time">01:00</p>
       <a href="/01">Хрустальный шар</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -145,7 +40,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/add.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/add.gif" alt="Program Icon" />
       <p class="program_time">01:58</p>
       <a href="add">Джингл</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -154,7 +49,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/02.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/02.gif" alt="Program Icon" />
       <p class="program_time">02:00</p>
       <a href="/02">Перспективы</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -163,7 +58,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/kvartirnaia-tema.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/kvartirnaia-tema.gif" alt="Program Icon" />
       <p class="program_time">03:00</p>
       <a href="kvartirnaia-tema">Квартирная тема</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -172,7 +67,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/solaris.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/solaris.gif" alt="Program Icon" />
       <p class="program_time">04:00</p>
       <a href="solaris">Солярис. Выпуск 1 (2013)</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -181,7 +76,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/vvedenie.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/vvedenie.gif" alt="Program Icon" />
       <p class="program_time">05:00</p>
       <a href="vvedenie">Введение</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -190,7 +85,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/06.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/06.gif" alt="Program Icon" />
       <p class="program_time">06:00</p>
       <a href="/06">Амур пронзает кедры</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -199,7 +94,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/07.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/07.gif" alt="Program Icon" />
       <p class="program_time">07:00</p>
       <a href="/07">Лена движется к пихтам</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -208,7 +103,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/08.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/08.gif" alt="Program Icon" />
       <p class="program_time">08:00</p>
       <a href="/08">Обь пересекает еловый берег</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -217,7 +112,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/09.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/09.gif" alt="Program Icon" />
       <p class="program_time">09:00</p>
       <a href="/09">Кама пролегает в тайге</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -226,7 +121,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/10.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/10.gif" alt="Program Icon" />
       <p class="program_time">10:00</p>
       <a href="/10">Copy that (Евгения Лягушина)</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -235,7 +130,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/11.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/11.gif" alt="Program Icon" />
       <p class="program_time">11:00</p>
       <a href="/11">Печора обтекает ясени</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -244,7 +139,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/12.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/12.gif" alt="Program Icon" />
       <p class="program_time">12:00</p>
       <a href="/12">Большой брат (Детский хор)</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -253,7 +148,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/01-2.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/01-2.gif" alt="Program Icon" />
       <p class="program_time">13:00</p>
       <a href="/01-2">Хрустальный шар</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -262,7 +157,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/14.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/14.gif" alt="Program Icon" />
       <p class="program_time">14:00</p>
       <a href="/14">П Ь I Л Ь (Aether Pilot)</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -271,7 +166,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/15.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/15.gif" alt="Program Icon" />
       <p class="program_time">15:00</p>
       <a href="/15">Кинозвук. Дерсу Узала (1975)</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -280,7 +175,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/16.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/16.gif" alt="Program Icon" />
       <p class="program_time">16:00</p>
       <a href="/16">Анимация без границ. Берлин</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -289,7 +184,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/17.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/17.gif" alt="Program Icon" />
       <p class="program_time">17:00</p>
       <a href="/17">Куй с нами (Павлова и Размики)</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -298,7 +193,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/18.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/18.gif" alt="Program Icon" />
       <p class="program_time">18:00</p>
       <a href="/18">Рейн возвышается над орехами</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -307,7 +202,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/19.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/19.gif" alt="Program Icon" />
       <p class="program_time">19:00</p>
       <a href="/19">Эльба пересекает кипарисы</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -316,7 +211,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/20.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/20.gif" alt="Program Icon" />
       <p class="program_time">20:00</p>
       <a href="/20">Луара огибает магнолии</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -325,7 +220,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/21.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/21.gif" alt="Program Icon" />
       <p class="program_time">21:00</p>
       <a href="/21">Сказка по-украински</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -334,7 +229,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/22.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/22.gif" alt="Program Icon" />
       <p class="program_time">22:00</p>
       <a href="/22">Темза ползёт среди тисов</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -343,7 +238,7 @@
     </div>
   
     <div class="program-card">
-    <!-- Скрытая ссылка на обложку <img class="program_icon" src="/images/23.gif" alt="Program Icon"> -->
+    <img class="program_icon" src="/images/23.gif" alt="Program Icon" />
       <p class="program_time">23:00</p>
       <a href="/23">Такси! Махачкала!</a>
       <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
@@ -357,10 +252,4 @@
 <script src="/assets/js/timeDisplay.js"></script>
 <script src="/assets/js/blinkCurrentHour.js"></script>
 </div>
-
-  
-
-<a href="https://t.me/efirindexmod" target="_blank">Подписаться на Эфир Indexmod</a>
-
-</body>
-</html>
+:ET
