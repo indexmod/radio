@@ -1,47 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Основные мета-теги -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-      <!-- Основные мета-теги -->
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Мета-теги для SEO, Open Graph и Twitter -->
+    {% include meta-tags.html %}
 
-      <!-- Мета-теги для SEO, Open Graph и Twitter -->
-      {% include meta-tags.html %}
+    <!-- Заголовок страницы -->
+    <title>{{ page.title }}</title>
 
-      <!-- Заголовок страницы -->
-      <title>{{ page.title }}</title>
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="{{ '/assets/css/styles-programs.css' | relative_url }}">
 
-      <!-- Подключение стилей -->
-      <link rel="stylesheet" href="{{ '/assets/css/styles-programs.css' | relative_url }}">
-
-      <!-- Фавиконки и иконки для устройств -->
-      {% include favicon.html %}
-
+    <!-- Фавиконки и иконки для устройств -->
+    {% include favicon.html %}
   </head>
-  <body> {% include sphere.html %} <br>
+  <body>
+    {% include sphere.html %}
+    <br><br><br><br>
+    {{ content }}
+    <p>Комментарии анонимные</p>
+    <hr>
     <br>
-    <br>
-    <br> {{ content }}
-    Комментарии анонимнымны
-    <hr></hr>
-    <br>
-    {%- if page.permalink -%}
-<div id="cusdis_thread"
-     data-host="https://cusdis.com"
-     data-app-id="5f841618-1fe2-4121-b62b-c9c51824bd7f"
-     data-page-id="{{ page.permalink }}"
-     data-page-url="{{ site.url }}{{ page.permalink }}"
-     data-page-title="{{ page.title }}">
-</div>
-<script defer src="{{ site.baseurl }}/assets/js/widget/lang/ru.js"></script>
-<script defer src="https://cusdis.com/js/cusdis.es.js"></script>
-{%- endif -%}
-    <br>
-    <br>
-    <br>
-    <br>
+
+    <!-- Инклюд для Cusdis комментариев -->
+    {% include cusdis.html %}
+
+    <br><br><br><br>
     <p>{% include footer.html %}</p>
+
     <script src="{{ '/assets/js/program-audio.js' | relative_url }}"></script>
   </body>
 </html>
