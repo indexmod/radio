@@ -1,0 +1,21 @@
+<!-- Open Graph Meta Tags -->
+<meta property="og:url" content="{{ site.url }}{{ page.permalink }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.start_time }} {{ page.author }} {{ page.guest }} {{ page.location }}">
+<meta property="og:image" content="{{ site.url }}/images/{{ page.permalink | remove: '/' }}.gif">
+<meta property="og:image:type" content="image/gif">
+<meta property="og:image:width" content="100">
+<meta property="og:image:height" content="100">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:audio" content="{{ page.audio_file }}">
+<meta property="og:audio:type" content="audio/mpeg">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.start_time }} {{ page.author }} {{ page.guest }} {{ page.location }}">
+<meta name="twitter:image" content="{{ site.url }}/images/{{ page.permalink | remove: '/' }}.gif">
+<meta name="twitter:player" content="{{ page.audio_file }}">
+<meta name="twitter:player:stream" content="{{ page.audio_file }}">
+<meta name="twitter:player:stream:content_type" content="audio/mpeg">

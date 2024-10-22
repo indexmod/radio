@@ -1,50 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      @import url(https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap);
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:url" content="{{site.url}}{{page.permalink}}">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{page.title}}">
-    <meta property="og:description" content="{{ page.start_time }} {{ page.author }} {{ page.guest }} {{ page.location }}">
-    <meta property="og:image" content="{{site.url}}/images{{page.permalink}}.gif">
-    <meta property="og:image:type" content="image/gif">
-    <meta property="og:image:width" content="100">
-    <meta property="og:image:height" content="100">
-    <meta property="og:site_name" content="Indexmod">
-    <meta property="fb:app_id" content="">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{page.title}}">
-    <meta name="twitter:description" content="{{ page.start_time }} {{ page.author }} {{ page.guest }} {{ page.location }}">
-    <meta name="twitter:image" content="{{site.url}}/images{{page.permalink}}.gif">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/styles-programs.css' | relative_url }}">
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+
+      <!-- Основные мета-теги -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+
+      <!-- Мета-теги для SEO, Open Graph и Twitter -->
+      {% include meta-tags.html %}
+
+      <!-- Заголовок страницы -->
+      <title>{{ page.title }}</title>
+
+      <!-- Подключение стилей -->
+      <link rel="stylesheet" href="{{ '/assets/css/styles-programs.css' | relative_url }}">
+
+      <!-- Фавиконки и иконки для устройств -->
+      {% include favicon.html %}
+
   </head>
   <body> {% include sphere.html %} <br>
     <br>
     <br>
     <br> {{ content }}
-    Комментарии по желанию могут остаться анонимными — просто оставьте поле почта — @  пустым
+    Комментарии анонимнымны
     <hr></hr>
     <br>
     {%- if page.permalink -%}
@@ -58,8 +37,6 @@
 <script defer src="{{ site.baseurl }}/assets/js/widget/lang/ru.js"></script>
 <script defer src="https://cusdis.com/js/cusdis.es.js"></script>
 {%- endif -%}
-
-
     <br>
     <br>
     <br>
