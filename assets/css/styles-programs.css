@@ -99,7 +99,7 @@ a:visited, a:active {
 
     #cusdis_thread {
       width: 100%;
-      min-height: 500px; /* Минимальная высота, если вам нужно */
+      min-height: 1000px; /* Минимальная высота, если вам нужно */
       overflow: visible; /* Делает все содержимое видимым без скролла */
       font-family: Georgia, serif; /* Устанавливаем шрифт Georgia */
   }
