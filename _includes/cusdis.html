@@ -1,9 +1,11 @@
+<p>Комментарии анонимные</p>
+
 {%- if page.permalink -%}
 <div id="cusdis_thread"
      data-host="https://cusdis.com"
      data-app-id="5f841618-1fe2-4121-b62b-c9c51824bd7f"
      data-page-id="{{ page.permalink }}"
-     data-page-url="{{ site.url }}{{ page.permalink }}"
+     data-page-url="{{ site.url }}/{{ page.permalink }}"
      data-page-title="{{ page.title }}">
 </div>
 <script defer src="{{ site.baseurl }}/assets/js/widget/lang/ru.js"></script>

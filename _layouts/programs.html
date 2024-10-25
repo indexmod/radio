@@ -4,33 +4,22 @@
     <!-- Основные мета-теги -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
     <!-- Мета-теги для SEO, Open Graph и Twitter -->
     {% include meta-tags.html %}
-
     <!-- Заголовок страницы -->
     <title>{{ page.title }}</title>
-
     <!-- Подключение стилей -->
     <link rel="stylesheet" href="{{ '/assets/css/styles-programs.css' | relative_url }}">
-
     <!-- Фавиконки и иконки для устройств -->
     {% include favicon.html %}
   </head>
   <body>
     {% include sphere.html %}
-    <br><br><br><br>
+    {% include audio.html %}
     {{ content }}
-    <p>Комментарии анонимные</p>
-    <hr>
-    <br>
-
     <!-- Инклюд для Cusdis комментариев -->
     {% include cusdis.html %}
-
-    <br><br><br><br>
-    <p>{% include footer.html %}</p>
-
+    {% include footer.html %}
     <script src="{{ '/assets/js/program-audio.js' | relative_url }}"></script>
   </body>
 </html>
