@@ -1,6 +1,8 @@
 <p>
   <audio id="audio-player" autoplay muted>
-    <source src="{{ page.audio_file }}" type="audio/mp4">
+    <source src="{{ site.baseurl }}/assets/audio/{{ page.permalink }}.m4a" type="audio/mp4">
+    <source src="{{ site.baseurl }}/assets/audio/{{ page.permalink }}.mp3" type="audio/mpeg">
+    <source src="{{ site.baseurl }}/assets/audio/{{ page.permalink }}.ogg" type="audio/ogg">
     Ваш браузер не поддерживает воспроизведение аудио.
   </audio>
 </p>
@@ -8,5 +10,6 @@
   window.addEventListener('load', function() {
     const audio = document.getElementById('audio-player');
     audio.muted = false; // Отключаем режим "без звука" после загрузки страницы
+    audio.play(); // Запускаем воспроизведение
   });
 </script>
