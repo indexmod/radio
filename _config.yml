@@ -4,3 +4,9 @@ description: A fashion and art chainpædia
 cname: indexmod.xyz
 url: 'https://indexmod.xyz'
 baseurl: ''
+defaults:
+  - scope:
+      path: ""
+      type: "programs"
+    values:
+      permalink: ":title"
