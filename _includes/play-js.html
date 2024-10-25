@@ -1,40 +1,34 @@
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const audio = document.getElementById('audio-player');
+document.addEventListener('DOMContentLoaded', function() {
+  const audio = document.getElementById('audio-player');
+  const playButton = document.getElementById('play-button');
 
-    if (audio) {
-      audio.muted = false; // Отключаем режим "без звука"
+  if (audio) {
+    // Убедимся, что звук отключен
+    audio.muted = false;
 
-      // Добавляем проверку на загрузку источников аудио
-      const sources = Array.from(audio.children);
-      let loadedSource = null;
+    // Добавляем обработчики для аудио источников
+    const sources = Array.from(audio.getElementsByTagName('source'));
 
-      sources.forEach(source => {
-        source.addEventListener('error', () => {
-          console.warn('Не удалось загрузить аудио источник:', source.src);
-        });
+    sources.forEach(source => {
+      source.addEventListener('error', () => {
+        console.warn('Не удалось загрузить аудио источник:', source.src);
       });
+    });
 
+    // Симуляция клика по кнопке для начала воспроизведения
+    playButton.addEventListener('click', function() {
       audio.play().then(() => {
-        console.log('Автоматическое воспроизведение началось успешно');
+        console.log('Воспроизведение началось успешно');
       }).catch(error => {
-        console.error('Ошибка при автоматическом воспроизведении:', error);
+        console.error('Ошибка при воспроизведении:', error);
       });
+    });
 
-      // Проверка выбранного источника и его доступности
-      sources.forEach(source => {
-        if (source.readyState >= 2) {
-          loadedSource = source;
-        }
-      });
-
-      if (loadedSource) {
-        console.log('Выбранный источник:', loadedSource.src);
-      } else {
-        console.warn('Не удалось выбрать источник аудио. Проверьте пути к файлам.');
-      }
-    } else {
-      console.warn('Аудио-элемент с id="audio-player" не найден на странице.');
-    }
-  });
+    // Симуляция клика после загрузки
+    playButton.click(); // Пробуем автоматически кликнуть по кнопке
+  } else {
+    console.warn('Аудио-элемент с id="audio-player" не найден на странице.');
+  }
+});
 </script>
