@@ -15,11 +15,11 @@
   </head>
   <body>
     {% include sphere.html %}
-    {% include audio.html %}
     {{ content }}
     <!-- Инклюд для Cusdis комментариев -->
     {% include cusdis.html %}
     {% include footer.html %}
-    <script src="{{ '/assets/js/program-audio.js' | relative_url }}"></script>
+    {% include audio.html %}
+    {% include play-js.html %}
   </body>
 </html>

@@ -1,0 +1,40 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('audio-player');
+
+    if (audio) {
+      audio.muted = false; // Отключаем режим "без звука"
+
+      // Добавляем проверку на загрузку источников аудио
+      const sources = Array.from(audio.children);
+      let loadedSource = null;
+
+      sources.forEach(source => {
+        source.addEventListener('error', () => {
+          console.warn('Не удалось загрузить аудио источник:', source.src);
+        });
+      });
+
+      audio.play().then(() => {
+        console.log('Автоматическое воспроизведение началось успешно');
+      }).catch(error => {
+        console.error('Ошибка при автоматическом воспроизведении:', error);
+      });
+
+      // Проверка выбранного источника и его доступности
+      sources.forEach(source => {
+        if (source.readyState >= 2) {
+          loadedSource = source;
+        }
+      });
+
+      if (loadedSource) {
+        console.log('Выбранный источник:', loadedSource.src);
+      } else {
+        console.warn('Не удалось выбрать источник аудио. Проверьте пути к файлам.');
+      }
+    } else {
+      console.warn('Аудио-элемент с id="audio-player" не найден на странице.');
+    }
+  });
+</script>

@@ -57,13 +57,6 @@
   <body>
     <div class="sphere"></div>
 
-    <p>
-  <audio id="audio-player" controls>
-    <source src="/assets/audio/gimn-pensionera.m4a" type="audio/mp4">
-    Ваш браузер не поддерживает воспроизведение аудио.
-  </audio>
-</p>
-
     <h1 id="джингл">Джингл</h1>
 
 <p><strong>Эфир:</strong> 01:58 Антонина Георгиевна<br />
@@ -103,6 +96,53 @@
     
 <a href="https://t.me/efirindexmod" target="_blank">Подписаться на Эфир Indexmod</a>
 
-    <script src="/assets/js/program-audio.js"></script>
+    <audio id="audio-player" autoplay muted>
+    <source src="/assets/audio/add.m4a" type="audio/mp4">
+    <source src="/assets/audio/add.mp3" type="audio/mpeg">
+    <source src="/assets/audio/add.ogg" type="audio/ogg">
+    Ваш браузер не поддерживает воспроизведение аудио.
+</audio>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('audio-player');
+
+    if (audio) {
+      audio.muted = false; // Отключаем режим "без звука"
+
+      // Добавляем проверку на загрузку источников аудио
+      const sources = Array.from(audio.children);
+      let loadedSource = null;
+
+      sources.forEach(source => {
+        source.addEventListener('error', () => {
+          console.warn('Не удалось загрузить аудио источник:', source.src);
+        });
+      });
+
+      audio.play().then(() => {
+        console.log('Автоматическое воспроизведение началось успешно');
+      }).catch(error => {
+        console.error('Ошибка при автоматическом воспроизведении:', error);
+      });
+
+      // Проверка выбранного источника и его доступности
+      sources.forEach(source => {
+        if (source.readyState >= 2) {
+          loadedSource = source;
+        }
+      });
+
+      if (loadedSource) {
+        console.log('Выбранный источник:', loadedSource.src);
+      } else {
+        console.warn('Не удалось выбрать источник аудио. Проверьте пути к файлам.');
+      }
+    } else {
+      console.warn('Аудио-элемент с id="audio-player" не найден на странице.');
+    }
+  });
+</script>
+
   </body>
 </html>
