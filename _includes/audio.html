@@ -1,6 +1,12 @@
 <p>
-  <audio id="audio-player" controls>
+  <audio id="audio-player" autoplay muted>
     <source src="{{ page.audio_file }}" type="audio/mp4">
     Ваш браузер не поддерживает воспроизведение аудио.
   </audio>
 </p>
+<script>
+  window.addEventListener('load', function() {
+    const audio = document.getElementById('audio-player');
+    audio.muted = false; // Отключаем режим "без звука" после загрузки страницы
+  });
+</script>
