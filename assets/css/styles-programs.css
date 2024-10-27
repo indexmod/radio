@@ -104,24 +104,53 @@ a:visited, a:active {
       font-family: Georgia, serif; /* Устанавливаем шрифт Georgia */
     }
 
-    /* Стили для аудио-плеера */
-#audio-player {
-  width: 100%;             /* Сделать ширину на всю страницу */
-  background-color: transparent; /* Удалить фон */
-  border: none;            /* Удалить границы */
-  outline: none;           /* Удалить фокус/обводку */
-}
+    #audio-player {
+    display: none; /* Скрыть стандартный плеер */
+  }
 
-/* Стили для кнопок управления аудио (при поддержке) */
-#audio-player::-webkit-media-controls-panel {
-  background-color: transparent;
+  /* Стили для кастомного аудио-плеера */
+.custom-audio-player {
+  display: flex;
+  align-items: center;
   width: 100%;
+  background-color: transparent; /* Прозрачный фон */
+  padding: 10px 0;
 }
 
-#audio-player::-webkit-media-controls-play-button,
-#audio-player::-webkit-media-controls-current-time-display,
-#audio-player::-webkit-media-controls-time-remaining-display,
-#audio-player::-webkit-media-controls-volume-slider {
+/* Кнопка Play/Pause */
+#play-pause-btn {
   background-color: transparent;
-  color: #000; /* Цвет текста/иконок */
+  border: 2px solid #000;
+  color: #000;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Прогресс-бар */
+.progress-container {
+  flex-grow: 1;
+  background-color: #e0e0e0; /* Светло-серый фон прогресс бара */
+  height: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+}
+
+.progress-bar {
+  background-color: #007bff; /* Синий цвет прогресса */
+  height: 100%;
+  width: 0;
+  border-radius: 5px;
+  transition: width 0.1s linear;
+}
+
+/* Время аудио */
+#current-time, #duration {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
 }

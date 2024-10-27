@@ -31,4 +31,69 @@ document.addEventListener('DOMContentLoaded', function() {
     console.warn('Аудио-элемент с id="audio-player" не найден на странице.');
   }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const audio = document.getElementById('audio-player');
+  const playPauseBtn = document.getElementById('play-pause-btn');
+  const progressBar = document.getElementById('progress-bar');
+  const progressContainer = document.querySelector('.progress-container');
+  const currentTimeDisplay = document.getElementById('current-time');
+  const durationDisplay = document.getElementById('duration');
+
+  // Обновление кнопки Play/Pause
+  function updatePlayPauseButton() {
+    if (audio.paused) {
+      playPauseBtn.textContent = 'Play';
+    } else {
+      playPauseBtn.textContent = 'Pause';
+    }
+  }
+
+  // Обновление времени
+  function updateTime() {
+    const currentMinutes = Math.floor(audio.currentTime / 60);
+    const currentSeconds = Math.floor(audio.currentTime % 60);
+    const durationMinutes = Math.floor(audio.duration / 60);
+    const durationSeconds = Math.floor(audio.duration % 60);
+
+    currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
+    durationDisplay.textContent = `${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+  }
+
+  // Обновление прогресс-бара
+  function updateProgressBar() {
+    const progressPercent = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+  }
+
+  // Воспроизведение/Пауза
+  playPauseBtn.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+    updatePlayPauseButton();
+  });
+
+  // Обновление прогресс-бара при воспроизведении
+  audio.addEventListener('timeupdate', function () {
+    updateTime();
+    updateProgressBar();
+  });
+
+  // Обработка кликов по прогресс-бару
+  progressContainer.addEventListener('click', function (e) {
+    const clickX = e.offsetX;
+    const width = progressContainer.clientWidth;
+    const duration = audio.duration;
+    audio.currentTime = (clickX / width) * duration;
+  });
+
+  // Автоматическое обновление времени и кнопки после загрузки метаданных
+  audio.addEventListener('loadedmetadata', function () {
+    updateTime();
+  });
+});
+
 </script>
