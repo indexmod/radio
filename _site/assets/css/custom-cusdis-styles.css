@@ -1,0 +1,57 @@
+/* custom-cusdis-styles.css */
+
+/* Контейнер виджета */
+#cusdis_thread {
+  max-width: 100%;                    /* Ширина не больше 100% родителя */
+  overflow: hidden;                   /* Убираем прокрутку */
+  margin: 0 auto;                     /* Центрирование */
+  padding: 20px;                      /* Внутренние отступы */
+  background-color: rgba(255, 255, 255, 0.8); /* Фон, совпадающий с основным стилем */
+  border-radius: 8px;                 /* Скругленные углы */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Стили iframe */
+iframe {
+  width: 100% !important;
+  height: 500px !important; /* Задаем фиксированную высоту, если auto не работает */
+  border: none !important;
+  overflow: hidden !important;
+  display: block;
+}
+
+
+/* Основной контейнер */
+#root {
+  background-color: transparent !important; /* Прозрачный фон */
+  color: #333 !important;                   /* Цвет текста */
+  font-family: Verdana, sans-serif;           /* Шрифт по умолчанию */
+  line-height: 1.5;                         /* Линейная высота */
+  padding: 10px 0;                          /* Отступы */
+  border-radius: 8px;                       /* Скругленные углы */
+}
+
+/* Стили кнопок */
+button {
+  font-size: 16px !important;               /* Размер шрифта кнопок */
+  color: #000 !important;                   /* Чёрный текст на кнопках */
+  background-color: transparent !important; /* Прозрачный фон */
+  border: 1px solid #ccc !important;        /* Серая рамка */
+  padding: 8px 12px;                        /* Внутренние отступы */
+  border-radius: 5px;                       /* Скругленные углы */
+  cursor: pointer;                          /* Указатель курсора */
+  transition: background-color 0.3s;        /* Анимация при наведении */
+}
+
+/* Стили кнопок при наведении */
+button:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important; /* Лёгкий серый фон при наведении */
+}
+
+/* Стили заголовков */
+h1, h2, h3, h4, h5, h6 {
+  color: #333 !important;                   /* Цвет заголовков */
+  font-weight: normal;                      /* Нормальный вес шрифта */
+  margin-top: 15px;                         /* Отступ сверху */
+  margin-bottom: 10px;                      /* Отступ снизу */
+}

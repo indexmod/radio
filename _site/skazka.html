@@ -55,7 +55,22 @@
 
   </head>
   <body>
-    <div class="sphere"></div>
+    <!-- Аудио элемент скрыт -->
+<audio id="audio-player" autoplay>
+    <source src="/assets/audio/skazka.m4a" type="audio/mp4">
+    <source src="/assets/audio/skazka.mp3" type="audio/mpeg">
+    <source src="/assets/audio/skazka.ogg" type="audio/ogg">
+    Ваш браузер не поддерживает воспроизведение аудио.
+</audio>
+
+<!-- Кастомный аудио-плеер -->
+<div class="custom-audio-player">
+  <button id="play-pause-btn">Аудио</button>
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+  <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+</div>
 
     <h1 id="сказка-по-украински">Сказка по-украински</h1>
 
@@ -65,63 +80,72 @@
 <p>В это время Андрей созванивается с Берлином и читает на ночь по-украински сказку для Нины Платоновой. В этом выпуске сказка — “Видатна атистка” по-украински — Выдающаяся артистка (автор уточняется). Программа в эфире 21:00</p>
 
     <!-- Инклюд для Cusdis комментариев -->
-    <p>Комментарии анонимные</p><div id="cusdis_thread"
-     data-host="https://cusdis.com"
-     data-app-id="5f841618-1fe2-4121-b62b-c9c51824bd7f"
-     data-page-id="skazka"
-     data-page-url="http://localhost:4000/skazka"
-     data-page-title="Сказка по-украински">
-</div>
-<script defer src="/assets/js/widget/lang/ru.js"></script>
-<script defer src="https://cusdis.com/js/cusdis.es.js"></script>
     
 <a href="https://t.me/efirindexmod" target="_blank">Подписаться на Эфир Indexmod</a>
 
-    <audio id="audio-player" autoplay muted>
-    <source src="/assets/audio/skazka.m4a" type="audio/mp4">
-    <source src="/assets/audio/skazka.mp3" type="audio/mpeg">
-    <source src="/assets/audio/skazka.ogg" type="audio/ogg">
-    Ваш браузер не поддерживает воспроизведение аудио.
-</audio>
-
     <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const audio = document.getElementById('audio-player');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const progressContainer = document.querySelector('.progress-container');
+    const currentTimeDisplay = document.getElementById('current-time');
+    const durationDisplay = document.getElementById('duration');
 
-    if (audio) {
-      audio.muted = false; // Отключаем режим "без звука"
-
-      // Добавляем проверку на загрузку источников аудио
-      const sources = Array.from(audio.children);
-      let loadedSource = null;
-
-      sources.forEach(source => {
-        source.addEventListener('error', () => {
-          console.warn('Не удалось загрузить аудио источник:', source.src);
-        });
-      });
-
-      audio.play().then(() => {
-        console.log('Автоматическое воспроизведение началось успешно');
-      }).catch(error => {
-        console.error('Ошибка при автоматическом воспроизведении:', error);
-      });
-
-      // Проверка выбранного источника и его доступности
-      sources.forEach(source => {
-        if (source.readyState >= 2) {
-          loadedSource = source;
-        }
-      });
-
-      if (loadedSource) {
-        console.log('Выбранный источник:', loadedSource.src);
+    // Обновление кнопки Play/Pause
+    function updatePlayPauseButton() {
+      if (audio.paused) {
+        playPauseBtn.textContent = 'Пуск';
       } else {
-        console.warn('Не удалось выбрать источник аудио. Проверьте пути к файлам.');
+        playPauseBtn.textContent = 'Пауза';
       }
-    } else {
-      console.warn('Аудио-элемент с id="audio-player" не найден на странице.');
     }
+
+    // Обновление времени
+    function updateTime() {
+      const currentMinutes = Math.floor(audio.currentTime / 60);
+      const currentSeconds = Math.floor(audio.currentTime % 60);
+      const durationMinutes = Math.floor(audio.duration / 60);
+      const durationSeconds = Math.floor(audio.duration % 60);
+
+      currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
+      durationDisplay.textContent = `${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+    }
+
+    // Обновление прогресс-бара
+    function updateProgressBar() {
+      const progressPercent = (audio.currentTime / audio.duration) * 100;
+      progressBar.style.width = `${progressPercent}%`;
+    }
+
+    // Воспроизведение/Пауза
+    playPauseBtn.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+      updatePlayPauseButton();
+    });
+
+    // Обновление прогресс-бара при воспроизведении
+    audio.addEventListener('timeupdate', function () {
+      updateTime();
+      updateProgressBar();
+    });
+
+    // Обработка кликов по прогресс-бару
+    progressContainer.addEventListener('click', function (e) {
+      const clickX = e.offsetX;
+      const width = progressContainer.clientWidth;
+      const duration = audio.duration;
+      audio.currentTime = (clickX / width) * duration;
+    });
+
+    // Автоматическое обновление времени и кнопки после загрузки метаданных
+    audio.addEventListener('loadedmetadata', function () {
+      updateTime();
+    });
   });
 </script>
 
