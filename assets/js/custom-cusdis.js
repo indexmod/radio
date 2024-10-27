@@ -43,7 +43,7 @@ function createIframe(target) {
     }
     singleTonIframe.srcdoc = makeIframeContent(target);
     singleTonIframe.style.width = "100%";
-    singleTonIframe.style.height = "100%"; // Задаем высоту 100%
+    singleTonIframe.style.height = "auto"; // Автоматическая высота
     singleTonIframe.style.border = "none"; // Убираем рамки
     singleTonIframe.style.overflow = "hidden"; // Убираем прокрутку
     singleTonIframe.style.display = "block"; // Блочный элемент для корректного расчета высоты
@@ -72,11 +72,6 @@ function listenEvent(iframe, target) {
             const msg = JSON.parse(e.data);
             if (msg.from === "cusdis") {
                 switch (msg.event) {
-                    case "onload":
-                        if (target.dataset.theme === "auto") {
-                            postMessage("setTheme", darkModeQuery.matches ? "dark" : "light");
-                        }
-                        break;
                     case "resize":
                         iframe.style.height = msg.data + "px"; // Устанавливаем высоту на основе содержимого
                         break;
@@ -89,16 +84,7 @@ function listenEvent(iframe, target) {
 
     window.addEventListener("message", onMessage);
 
-    const onChangeColorScheme = (e) => {
-        if (target.dataset.theme === "auto") {
-            postMessage("setTheme", e.matches ? "dark" : "light");
-        }
-    };
-
-    darkModeQuery.addEventListener("change", onChangeColorScheme);
-
     return () => {
-        darkModeQuery.removeEventListener("change", onChangeColorScheme);
         window.removeEventListener("message", onMessage);
     };
 }
@@ -115,9 +101,6 @@ function render(target) {
 // Экспортируем функции
 window.renderCusdis = render;
 window.CUSDIS.renderTo = render;
-window.CUSDIS.setTheme = function (theme) {
-    postMessage("setTheme", theme);
-};
 
 // Инициализация виджета
 function initial() {
