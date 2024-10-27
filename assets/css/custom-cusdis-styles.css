@@ -1,5 +1,21 @@
 /* custom-cusdis-styles.css */
 
+/* Контейнер виджета */
+#cusdis_thread {
+  max-width: 100%;                  /* Ширина не больше 100% родителя */
+  overflow: hidden;                 /* Убираем прокрутку */
+  margin: 0 auto;                   /* Центрирование, если требуется */
+}
+
+/* Стили iframe */
+iframe {
+  width: 100% !important;           /* Ширина iframe 100% от родителя */
+  height: auto !important;          /* Высота автоматически под контент */
+  border: none !important;          /* Убираем рамки */
+  overflow: hidden !important;      /* Убираем прокрутку */
+}
+
+
 /* Основной контейнер */
 #root {
   background-color: #f0f0f0 !important; /* Фон виджета */

@@ -21,6 +21,11 @@ const makeIframeContent = (target) => {
       :root {
         color-scheme: light;
       }
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Убираем прокрутку */
+      }
     </style>
   </head>
   <body>
@@ -40,7 +45,11 @@ function createIframe(target) {
   }
   singleTonIframe.srcdoc = makeIframeContent(target);
   singleTonIframe.style.width = "100%";
-  singleTonIframe.style.border = "0";
+  singleTonIframe.style.height = "auto";       // Автоматическая высота
+  singleTonIframe.style.border = "none";       // Убираем рамки
+  singleTonIframe.style.overflow = "hidden";   // Убираем прокрутку
+  singleTonIframe.style.maxWidth = "100%";     // Ширина не больше 100% родителя
+  singleTonIframe.style.display = "block";     // Блочный элемент для корректного расчета высоты
   return singleTonIframe;
 }
 
@@ -72,7 +81,7 @@ function listenEvent(iframe, target) {
             }
             break;
           case "resize":
-            iframe.style.height = msg.data + "px";
+            iframe.style.height = msg.data + "px"; // Устанавливаем высоту на основе содержимого
             break;
         }
       }
