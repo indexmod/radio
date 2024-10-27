@@ -131,7 +131,7 @@ a:visited, a:active {
 /* Прогресс-бар */
 .progress-container {
     flex-grow: 1;
-    background-color: white;
+    background-color: silver;
     height: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -140,7 +140,7 @@ a:visited, a:active {
 }
 
 .progress-bar {
-    background-color: lime;
+    background-color: lavender;
     height: 100%;
     width: 0;
     border-radius: 5px;
