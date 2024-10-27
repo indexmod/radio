@@ -1,0 +1,10 @@
+/* custom-cusdis-styles.css */
+#root {
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+}
+
+button {
+  font-size: 16px !important;
+  color: red !important;
+}
