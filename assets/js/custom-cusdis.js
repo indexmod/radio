@@ -64,17 +64,13 @@ function postMessage(event, data) {
 }
 
 // Слушаем события из iframe
-function listenEvent(iframe, target) {
-    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
+function listenEvent(iframe) {
     const onMessage = (e) => {
         try {
             const msg = JSON.parse(e.data);
             if (msg.from === "cusdis") {
-                switch (msg.event) {
-                    case "resize":
-                        iframe.style.height = msg.data + "px"; // Устанавливаем высоту на основе содержимого
-                        break;
+                if (msg.event === "resize") {
+                    iframe.style.height = msg.data + "px"; // Устанавливаем высоту на основе содержимого
                 }
             }
         } catch (e2) {
@@ -83,10 +79,6 @@ function listenEvent(iframe, target) {
     };
 
     window.addEventListener("message", onMessage);
-
-    return () => {
-        window.removeEventListener("message", onMessage);
-    };
 }
 
 // Функция рендеринга
@@ -104,12 +96,7 @@ window.CUSDIS.renderTo = render;
 
 // Инициализация виджета
 function initial() {
-    let target;
-    if (window.cusdisElementId) {
-        target = document.querySelector(`#${window.cusdisElementId}`);
-    } else if (document.querySelector("#cusdis_thread")) {
-        target = document.querySelector("#cusdis_thread");
-    }
+    let target = document.querySelector(`#${window.cusdisElementId}`) || document.querySelector("#cusdis_thread");
 
     if (target) {
         render(target);

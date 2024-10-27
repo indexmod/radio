@@ -13,12 +13,13 @@
 
 /* Стили iframe */
 iframe {
-  width: 100% !important;             /* Ширина iframe 100% от родителя */
-  height: auto !important;            /* Высота автоматически под контент */
-  border: none !important;            /* Убираем рамки */
-  overflow: hidden !important;        /* Убираем прокрутку */
-  display: block;                     /* Корректный блочный элемент */
+  width: 100% !important;
+  height: 500px !important; /* Задаем фиксированную высоту, если auto не работает */
+  border: none !important;
+  overflow: hidden !important;
+  display: block;
 }
+
 
 /* Основной контейнер */
 #root {
