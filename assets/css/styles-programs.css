@@ -1,3 +1,7 @@
+@import 'https://fonts.googleapis.com/css?family=Rubik+One';
+@import 'https://fonts.googleapis.com/css?family=EB+Garamond';
+
+
 /* Сброс базовых стилей */
 * {
     margin: 0;
@@ -76,10 +80,18 @@ body, html {
     }
 }
 
-h1, h2, h3 {
-    margin-bottom: 40px;
+h1 {
+    margin-bottom: 15px;
+    font-size: 60px;
+    font-family: "EB Garamond", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+}
+
+h2, h3 {
+    margin-bottom: 15px;
     font-size: 20px;
-    font-family: "Georgia", serif;
+    font-family: "Verdana", sans-serif;
 }
 
 p {
@@ -122,7 +134,7 @@ a:visited, a:active {
     padding: 5px 10px;
     cursor: pointer;
     margin-right: 15px;
-    font-family: Verdana, sans-serif;
+    font-family: "Verdana", sans-serif;
     font-size: 15px;
     border-radius: 10px; /* Добавлено для закругления углов */
 }
@@ -149,7 +161,7 @@ a:visited, a:active {
 
 /* Время аудио */
 #current-time, #duration {
-    font-family: Verdana, sans-serif;
+    font-family: "Verdana", sans-serif;
     font-size: 15px;
     color: grey;
 }
