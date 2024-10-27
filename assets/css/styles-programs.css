@@ -103,3 +103,25 @@ a:visited, a:active {
       overflow: visible; /* Делает все содержимое видимым без скролла */
       font-family: Georgia, serif; /* Устанавливаем шрифт Georgia */
     }
+
+    /* Стили для аудио-плеера */
+#audio-player {
+  width: 100%;             /* Сделать ширину на всю страницу */
+  background-color: transparent; /* Удалить фон */
+  border: none;            /* Удалить границы */
+  outline: none;           /* Удалить фокус/обводку */
+}
+
+/* Стили для кнопок управления аудио (при поддержке) */
+#audio-player::-webkit-media-controls-panel {
+  background-color: transparent;
+  width: 100%;
+}
+
+#audio-player::-webkit-media-controls-play-button,
+#audio-player::-webkit-media-controls-current-time-display,
+#audio-player::-webkit-media-controls-time-remaining-display,
+#audio-player::-webkit-media-controls-volume-slider {
+  background-color: transparent;
+  color: #000; /* Цвет текста/иконок */
+}
