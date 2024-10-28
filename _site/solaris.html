@@ -15,7 +15,7 @@
 <meta property="og:image:width" content="100">
 <meta property="og:image:height" content="100">
 <meta property="og:site_name" content="Эфир Indexmod">
-<meta property="og:audio" content="http://localhost:4000/assets/audio/solaris-vypusk-1.m4a">
+<meta property="og:audio" content="http://localhost:4000/assets/audio/{{ page.permalink }}.mp3">
 <meta property="og:audio:type" content="audio/mpeg">
 
 <!-- Twitter Card Meta Tags -->
@@ -23,8 +23,8 @@
 <meta name="twitter:title" content="Солярис. Выпуск 1 (2013)">
 <meta name="twitter:description" content="04:00  Алексей Турчин Москва, Красный октябрь, W→O→S">
 <meta name="twitter:image" content="http://localhost:4000/images/solaris.gif">
-<meta name="twitter:player" content="http://localhost:4000/assets/audio/solaris-vypusk-1.m4a">
-<meta name="twitter:player:stream" content="http://localhost:4000/assets/audio/solaris-vypusk-1.m4a">
+<meta name="twitter:player" content="http://localhost:4000/assets/audio/{{ page.permalink }}.mp3">
+<meta name="twitter:player:stream" content="http://localhost:4000/assets/audio/{{ page.permalink }}.mp3">
 <meta name="twitter:player:stream:content_type" content="audio/mpeg">
 
     <!-- Заголовок страницы -->
@@ -57,9 +57,7 @@
   <body>
     <!-- Аудио элемент скрыт -->
 <audio id="audio-player" autoplay>
-    <source src="/assets/audio/solaris.m4a" type="audio/mp4">
     <source src="/assets/audio/solaris.mp3" type="audio/mpeg">
-    <source src="/assets/audio/solaris.ogg" type="audio/ogg">
     Ваш браузер не поддерживает воспроизведение аудио.
 </audio>
 

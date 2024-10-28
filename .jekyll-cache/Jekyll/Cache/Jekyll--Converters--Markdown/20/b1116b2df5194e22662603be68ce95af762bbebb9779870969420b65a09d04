@@ -1,0 +1,219 @@
+I"�.<!-- Основной градиентный фон -->
+<div class="gradient"></div>
+
+<!-- Контейнер с заголовком, мигающим кружком и временем -->
+<div class="header-info">
+  <span>Эфир Indexmod</span>
+  <div class="blinking-circle"></div>
+  <div id="timeDisplay"></div>
+  <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 5px; height: 21px;" onclick="location.reload()" />
+</div>
+
+<!-- Аудио плеер -->
+<div class="audio-container">
+  <audio id="audioPlayer" controls="">
+    <source id="audioSource" src="" type="audio/mpeg" />
+    Ваш браузер не поддерживает аудио элемент.
+  </audio>
+</div>
+
+<!-- Сетка программ -->
+<div id="programsContainer" class="programs-grid">
+  <!-- Цикл по страницам с фильтрацией и сортировкой -->
+  
+
+  <!-- Вывод программ в сетке 6 на 4 -->
+  
+    <div class="program-card">
+      <p class="program_time">00:00</p>
+      <a href="pil-1">П Ь I Л Ь (Рик Уэст)</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-00" href="/assets/audio/pil-1.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">01:00</p>
+      <a href="shar">Хрустальный шар</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-01" href="/assets/audio/shar.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">02:00</p>
+      <a href="elexir">Элексир. Субстанция</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-02" href="/assets/audio/elexir.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">03:00</p>
+      <a href="kvartirnaia-tema">Квартирная тема</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-03" href="/assets/audio/kvartirnaia-tema.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">04:00</p>
+      <a href="solaris">Солярис. Выпуск 1 (2013)</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-04" href="/assets/audio/solaris.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">05:00</p>
+      <a href="vvedenie">Введение</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-05" href="/assets/audio/vvedenie.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">06:00</p>
+      <a href="asmr">ASMR спектакль. Последние и первые люди</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-06" href="/assets/audio/asmr.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">07:00</p>
+      <a href="lena">Лена движется к пихтам</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-07" href="/assets/audio/lena.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">08:00</p>
+      <a href="ob">Обь пересекает еловый берег</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-08" href="/assets/audio/ob.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">09:00</p>
+      <a href="kama">Кама пролегает в тайге</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-09" href="/assets/audio/kama.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">10:00</p>
+      <a href="copy-that">Copy that (Евгения Лягушина)</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-10" href="/assets/audio/copy-that.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">11:00</p>
+      <a href="pechora">Печора обтекает ясени</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-11" href="/assets/audio/pechora.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">12:00</p>
+      <a href="bolshoi-brat">Большой брат (Детский хор)</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-12" href="/assets/audio/bolshoi-brat.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">13:00</p>
+      <a href="">Сежее мясо</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-13" href="/assets/audio/.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">14:00</p>
+      <a href="pil-2">П Ь I Л Ь (Aether Pilot)</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-14" href="/assets/audio/pil-2.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">15:00</p>
+      <a href="kino">Кинозвук. Дерсу Узала (1975)</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-15" href="/assets/audio/kino.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">16:00</p>
+      <a href="anima">Анимация без границ. Берлин</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-16" href="/assets/audio/anima.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">17:00</p>
+      <a href="kiu">Куй с нами (Павлова и Размики)</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-17" href="/assets/audio/kiu.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">18:00</p>
+      <a href="rein">Рейн возвышается над орехами</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-18" href="/assets/audio/rein.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">19:00</p>
+      <a href="elba">Эльба пересекает кипарисы</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-19" href="/assets/audio/elba.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">20:00</p>
+      <a href="luara">Луара огибает магнолии</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-20" href="/assets/audio/luara.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">21:00</p>
+      <a href="skazka">Сказка по-украински</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-21" href="/assets/audio/skazka.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">22:00</p>
+      <a href="temza">Темза ползёт среди тисов</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-22" href="/assets/audio/temza.mp3" style="display:none;">Audio</a>
+    </div>
+  
+    <div class="program-card">
+      <p class="program_time">23:00</p>
+      <a href="makhachkala">Такси! Махачкала!</a>
+      <!-- Скрытая ссылка на аудиофайл с динамическим классом, основанным на времени начала программы -->
+      <a class="audio-link-23" href="/assets/audio/makhachkala.mp3" style="display:none;">Audio</a>
+    </div>
+  
+</div>
+
+<!-- Подключение скриптов -->
+<script src="/assets/js/audioPlayer.js"></script>
+
+<script src="/assets/js/timeDisplay.js"></script>
+
+<script src="/assets/js/blinkCurrentHour.js"></script>
+
+<script src="/assets/js/loadCurrentHourAudio.js"></script>
+
+<!-- Стили для аудио плеера -->
+<style>
+  .audio-container {
+    margin: 20px 0; /* Отступ сверху и снизу */
+    text-align: center; /* Выравнивание по центру */
+  }
+
+  audio {
+    width: 100%; /* Ширина плеера на 100% */
+    max-width: 600px; /* Максимальная ширина плеера */
+  }
+</style>
+
+:ET

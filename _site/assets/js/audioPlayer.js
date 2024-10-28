@@ -1,43 +1,49 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Получаем текущий час и минуту
-  const currentDate = new Date();
-  const currentHour = currentDate.getHours().toString().padStart(2, '0');
-  const currentMinute = currentDate.getMinutes();
+document.addEventListener("DOMContentLoaded", function () {
+    const audioPlayer = document.getElementById("audio-player");
+    const playPauseBtn = document.getElementById("play-pause-btn");
+    const progressBar = document.getElementById("progress-bar");
+    const currentTimeDisplay = document.getElementById("current-time");
+    const durationDisplay = document.getElementById("duration");
 
-  // Получаем элементы аудиоплеера и ссылки на аудиофайлы
-  const audioPlayer = document.getElementById('audioPlayer');
-  const audioLink = document.querySelector(`.audio-link-${currentHour}`);
+    // Получаем текущий час
+    const currentHour = new Date().getHours();
+    const audioSource = document.getElementById("audio-source");
+    const audioLink = document.querySelector(`.audio-link-${currentHour}`);
 
-  if (audioLink) {
-    // Устанавливаем ссылку на текущую программу в аудиоплеер
-    audioPlayer.src = audioLink.href;
-
-    // Рассчитываем текущее время начала воспроизведения в секундах
-    const startTimeInSeconds = currentMinute * 60;
-    audioPlayer.currentTime = startTimeInSeconds;
-
-    // Автоматически воспроизводим аудио при загрузке
-    audioPlayer.play().catch(error => console.log("Автовоспроизведение заблокировано браузером:", error));
-  } else {
-    console.log("Аудиофайл для текущего времени не найден.");
-  }
-
-  // Функция для переключения воспроизведения/паузы
-  function togglePlayPause() {
-    if (audioPlayer.paused) {
-      audioPlayer.play();
+    // Проверяем, существует ли ссылка с классом, соответствующим текущему часу
+    if (audioLink) {
+        audioSource.src = audioLink.href; // Подставляем путь к аудиофайлу
+        audioPlayer.load(); // Загружаем новый источник
     } else {
-      audioPlayer.pause();
+        console.warn("Аудиофайл для текущего времени не найден.");
     }
-  }
 
-  // Обработчики кликов, тапов и нажатий клавиш
-  document.addEventListener("click", togglePlayPause);
-  document.addEventListener("touchstart", togglePlayPause);
-  document.addEventListener("keydown", function(event) {
-    if (event.code === "Space") {
-      event.preventDefault(); // Предотвращаем прокрутку страницы при нажатии пробела
-      togglePlayPause();
+    // Установка длительности аудио при загрузке
+    audioPlayer.addEventListener("loadedmetadata", function () {
+        durationDisplay.textContent = formatTime(audioPlayer.duration);
+    });
+
+    // Обновление времени и прогресс-бара во время воспроизведения
+    audioPlayer.addEventListener("timeupdate", function () {
+        currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+        progressBar.style.width = (audioPlayer.currentTime / audioPlayer.duration) * 100 + '%';
+    });
+
+    // Обработчик нажатия кнопки воспроизведения/паузы
+    playPauseBtn.addEventListener("click", function () {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseBtn.textContent = "Пауза";
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.textContent = "Звук";
+        }
+    });
+
+    // Функция для форматирования времени
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
     }
-  });
 });
