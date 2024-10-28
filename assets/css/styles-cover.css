@@ -58,7 +58,7 @@ html {
 }
 
 .header-info span {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 /* Пульсирующий белый трехмерный кружок */
@@ -90,7 +90,7 @@ html {
 #timeDisplay {
   font-weight: normal;
   color: white;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 /* Скрытый аудиоплеер */
@@ -100,7 +100,7 @@ audio {
 
 /* Пульсация текста */
 .blinking {
-  animation: blink 5s step-end infinite;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
@@ -126,7 +126,7 @@ h3 {
 /* Стили для ссылок */
 a {
   color: black;
-  font-size: 15px;
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -147,7 +147,7 @@ a:hover {
 
 /* Стили для карточек программ */
 .program-card {
-  padding: 15px;
+  padding: 20px;
   border: none;
   background-color: transparent;
   text-align: left;
@@ -157,7 +157,7 @@ a:hover {
 .program_time {
   font-weight: normal;
   font-family: 'Verdana', sans-serif;
-  font-size: 15px;
+  font-size: 30px;
   margin-bottom: 5px;
 }
 
