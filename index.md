@@ -13,14 +13,7 @@ title: Эфир Indexmod
   <div id="timeDisplay"></div>
   <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 5px; height: 21px;" onclick="location.reload()">
 </div>
-
-<!-- Кнопка Пауза с подсказкой -->
-
-{% include spacebar.html %}
-
-<!-- Аудиоплеер, скрытый по умолчанию -->
-<audio id="audioPlayer" controls></audio>
-
+{% include audio.html %}
 <!-- Сетка программ -->
 <div id="programsContainer" class="programs-grid">
   <!-- Цикл по страницам с фильтрацией и сортировкой -->

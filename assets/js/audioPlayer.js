@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Получаем текущий час
+  // Получаем текущий час и минуту
   const currentDate = new Date();
   const currentHour = currentDate.getHours().toString().padStart(2, '0');
-
-  // Получаем текущую минуту
   const currentMinute = currentDate.getMinutes();
 
   // Получаем элементы аудиоплеера и ссылки на аудиофайлы
@@ -14,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Устанавливаем ссылку на текущую программу в аудиоплеер
     audioPlayer.src = audioLink.href;
 
-    // Рассчитываем текущую минуту в секундах
+    // Рассчитываем текущее время начала воспроизведения в секундах
     const startTimeInSeconds = currentMinute * 60;
-
-    // Устанавливаем время начала воспроизведения
     audioPlayer.currentTime = startTimeInSeconds;
-    audioPlayer.play();
+
+    // Автоматически воспроизводим аудио при загрузке
+    audioPlayer.play().catch(error => console.log("Автовоспроизведение заблокировано браузером:", error));
   } else {
     console.log("Аудиофайл для текущего времени не найден.");
   }
@@ -33,11 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  // Обработчик кликов и тапов
+  // Обработчики кликов, тапов и нажатий клавиш
   document.addEventListener("click", togglePlayPause);
   document.addEventListener("touchstart", togglePlayPause);
-
-  // Обработчик нажатий клавиш
   document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
       event.preventDefault(); // Предотвращаем прокрутку страницы при нажатии пробела
