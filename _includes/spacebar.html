@@ -1,8 +1,6 @@
-<a href="#" class="button">Click Me</a>
+<a href="#" class="button">&#9654;</a>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Rubik+One');
-
   /* Стили для кнопки */
   .button::after, .button::before {
     position: absolute;
@@ -15,13 +13,13 @@
     padding: 20px 40px;
     color: white;
     position: fixed; /* Используем fixed для плавающей кнопки */
-    bottom: 40px; /* Закрепляем кнопку на 40 пикселей выше нижнего края */
+    top: 60px; /* Закрепляем кнопку на 40 пикселей выше нижнего края */
     left: 50%; /* Центрируем кнопку по горизонтали */
     transform: translateX(-50%); /* Сдвигаем кнопку влево на половину её ширины */
     vertical-align: middle;
-    font-family: "Rubik One", sans-serif;
+    font-family: "Verdana", sans-serif;
     text-decoration: none;
-    font-size: 4vw;
+    font-size: 3vw;
     transition: all 0.5s;
     background-color: #3498db;
 }
