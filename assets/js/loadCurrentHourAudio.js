@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     audioPlayer.addEventListener('loadedmetadata', function () {
       if (audioPlayer.duration) {
         durationDisplay.textContent = formatTime(audioPlayer.duration);
+        // Устанавливаем текущее время на 0, чтобы начать с начала
+        audioPlayer.currentTime = getSavedTime() || 0; // Сохраняем время
       } else {
         durationDisplay.textContent = '0:00';
       }
@@ -48,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
     progressBar.style.width = progress + '%';
     currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+
+    // Сохраняем текущее время
+    saveCurrentTime(audioPlayer.currentTime);
   });
 
   // Форматирование времени
@@ -55,5 +60,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+  }
+
+  // Сохранение текущего времени в локальное хранилище
+  function saveCurrentTime(time) {
+    localStorage.setItem('audioCurrentTime', time);
+  }
+
+  // Получение сохраненного времени из локального хранилища
+  function getSavedTime() {
+    return parseFloat(localStorage.getItem('audioCurrentTime'));
   }
 });
