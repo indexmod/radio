@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentTimeDisplay = document.getElementById('current-time');
   const durationDisplay = document.getElementById('duration');
 
-  // Получение текущего часа
+  // Получение текущего часа и минуты
   const currentHour = new Date().getHours();
+  const currentMinute = new Date().getMinutes();
 
   // Поиск аудиофайла текущего часа
   const audioLink = document.querySelector(`.audio-link-${currentHour}`);
@@ -20,8 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
     audioPlayer.addEventListener('loadedmetadata', function () {
       if (audioPlayer.duration) {
         durationDisplay.textContent = formatTime(audioPlayer.duration);
-        // Устанавливаем текущее время на 0, чтобы начать с начала
-        audioPlayer.currentTime = getSavedTime() || 0; // Сохраняем время
+
+        // Устанавливаем текущее время на текущее время в минутах
+        const totalSeconds = currentHour * 3600 + currentMinute * 60; // Полное количество секунд с начала дня
+        audioPlayer.currentTime = Math.min(totalSeconds, audioPlayer.duration); // Убедитесь, что текущее время не превышает продолжительность
       } else {
         durationDisplay.textContent = '0:00';
       }
@@ -50,9 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
     progressBar.style.width = progress + '%';
     currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
-
-    // Сохраняем текущее время
-    saveCurrentTime(audioPlayer.currentTime);
   });
 
   // Форматирование времени
@@ -60,15 +60,5 @@ document.addEventListener('DOMContentLoaded', function () {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-  }
-
-  // Сохранение текущего времени в локальное хранилище
-  function saveCurrentTime(time) {
-    localStorage.setItem('audioCurrentTime', time);
-  }
-
-  // Получение сохраненного времени из локального хранилища
-  function getSavedTime() {
-    return parseFloat(localStorage.getItem('audioCurrentTime'));
   }
 });
