@@ -1,0 +1,38 @@
+<!-- Прелоадер -->
+<div id="preloader" class="preloader">
+    <div class="loading-text">Нажать</div>
+</div>
+
+<!-- Аудиоплеер для джингла (скрыт) -->
+<audio id="audioPlayer" preload="auto" style="display: none;">
+    <source id="audioSource" src="/assets/audio/jingle.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио элемент.
+</audio>
+
+<script>
+    // Получаем элементы
+    const preloader = document.getElementById('preloader');
+    const loadingText = document.querySelector('.loading-text');
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    // Событие для нажатия на экран
+    preloader.addEventListener('click', function () {
+        // Запускаем аудио джингл
+        audioPlayer.play();
+
+        // Меняем текст на "Загрузка"
+        loadingText.textContent = 'Загрузка';
+
+        // По окончании аудио показываем основное содержимое страницы
+        audioPlayer.onended = function () {
+            // Здесь можно добавить код для показа основного содержимого страницы
+            document.body.classList.remove('loading'); // Убираем класс загрузки
+            preloader.style.display = 'none'; // Скрываем прелоадер
+        };
+    });
+
+    // Ждем полной загрузки страницы
+    document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('loading'); // Добавляем класс загрузки
+    });
+</script>

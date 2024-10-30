@@ -1,5 +1,5 @@
 ---
-layout: cover
+layout: editor
 title: Эфир Indexmod
 ---
 
@@ -22,13 +22,15 @@ title: Эфир Indexmod
   </audio>
 </div>
 
+
 <!-- Кастомный аудио-плеер -->
 <div class="custom-audio-player">
   <button id="play-pause-btn">Звук</button>
+
   <div class="progress-container">
     <div class="progress-bar" id="progress-bar"></div>
   </div>
-  <span id="current-time">0:00</span><span style="color: black;">/</span><span id="duration">0:00</span>
+<span id="current-time">0:00</span><span style="color: black;">/</span><span id="duration">0:00</span>
 </div>
 
 <!-- Сетка программ -->
@@ -43,18 +45,7 @@ title: Эфир Indexmod
   {% endfor %}
 </div>
 
-{% include preloader.html %}
-
 <!-- Подключение скриптов -->
 <script src="{{ site.baseurl }}/assets/js/timeDisplay.js"></script>
 <script src="{{ site.baseurl }}/assets/js/blinkCurrentHour.js"></script>
 <script src="{{ site.baseurl }}/assets/js/loadCurrentHourAudio.js"></script>
-
-<!-- Скрипт для скрытия сетки программ -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Скрываем сетку программ
-        const programsContainer = document.getElementById('programsContainer');
-        programsContainer.style.display = 'none'; // Или используйте visibility: hidden; для сохранения места
-    });
-</script>

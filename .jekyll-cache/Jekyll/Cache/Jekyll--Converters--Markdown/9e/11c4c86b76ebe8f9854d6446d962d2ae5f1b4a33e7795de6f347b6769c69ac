@@ -1,42 +1,12 @@
-  <!-- Макет: обложка  -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- Favicon and Icons -->
-<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/manifest.json">
-
-<!-- Browser Theme -->
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-
-  <!-- Отключение кэширования -->
- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
- <meta http-equiv="Pragma" content="no-cache">
- <meta http-equiv="Expires" content="0">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/assets/css/styles-cover.css">
-<title>Эфир Indexmod</title>
-</head>
-<body>
-  <!-- Основной градиентный фон -->
+I"%<!-- Основной градиентный фон -->
 <div class="gradient"></div>
+
+<!-- Прелоадер -->
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <span>Эфир Indexmod</span>
+  </div>
+</div>
 
 <!-- Контейнер с заголовком, мигающим кружком и временем -->
 <div class="header-info">
@@ -46,7 +16,7 @@
   <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 5px; height: 21px;" onclick="location.reload()" />
 </div>
 
-<!-- Скрытый аудио плеер (сделаем его видимым, но стилизуем) -->
+<!-- Скрытый аудиоплеер -->
 <div class="audio-container" style="visibility: hidden; height: 0;">
   <audio id="audioPlayer">
     <source id="audioSource" src="" type="audio/mpeg" />
@@ -57,14 +27,14 @@
 <!-- Кастомный аудио-плеер -->
 <div class="custom-audio-player">
   <button id="play-pause-btn">Звук</button>
+  <span id="current-time">0:00</span><span style="color: black;"> / </span><span id="duration">0:00</span>
   <div class="progress-container">
     <div class="progress-bar" id="progress-bar"></div>
   </div>
-  <span id="current-time">0:00</span><span style="color: black;">/</span><span id="duration">0:00</span>
 </div>
 
-<!-- Сетка программ -->
-<div id="programsContainer" class="programs-grid">
+<!-- Скрытая сетка программ -->
+<div id="programsContainer" class="programs-grid" style="display: none;">
   
   
     <div class="program-card">
@@ -213,45 +183,6 @@
   
 </div>
 
-<!-- Прелоадер -->
-<div id="preloader" class="preloader">
-    <div class="loading-text">Нажать</div>
-</div>
-
-<!-- Аудиоплеер для джингла (скрыт) -->
-<audio id="audioPlayer" preload="auto" style="display: none;">
-    <source id="audioSource" src="/assets/audio/jingle.mp3" type="audio/mpeg" />
-    Ваш браузер не поддерживает аудио элемент.
-</audio>
-
-<script>
-    // Получаем элементы
-    const preloader = document.getElementById('preloader');
-    const loadingText = document.querySelector('.loading-text');
-    const audioPlayer = document.getElementById('audioPlayer');
-
-    // Событие для нажатия на экран
-    preloader.addEventListener('click', function () {
-        // Запускаем аудио джингл
-        audioPlayer.play();
-
-        // Меняем текст на "Загрузка"
-        loadingText.textContent = 'Загрузка';
-
-        // По окончании аудио показываем основное содержимое страницы
-        audioPlayer.onended = function () {
-            // Здесь можно добавить код для показа основного содержимого страницы
-            document.body.classList.remove('loading'); // Убираем класс загрузки
-            preloader.style.display = 'none'; // Скрываем прелоадер
-        };
-    });
-
-    // Ждем полной загрузки страницы
-    document.addEventListener('DOMContentLoaded', function () {
-        document.body.classList.add('loading'); // Добавляем класс загрузки
-    });
-</script>
-
 <!-- Подключение скриптов -->
 <script src="/assets/js/timeDisplay.js"></script>
 
@@ -259,15 +190,84 @@
 
 <script src="/assets/js/loadCurrentHourAudio.js"></script>
 
-<!-- Скрипт для скрытия сетки программ -->
+<!-- Прелоадер скрипт -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Скрываем сетку программ
-        const programsContainer = document.getElementById('programsContainer');
-        programsContainer.style.display = 'none'; // Или используйте visibility: hidden; для сохранения места
-    });
+  const jingleAudio = new Audio('/assets/audio/jingle.mp3');
+
+  function hidePreloader() {
+    document.getElementById('preloader').style.display = 'none';
+    document.querySelector('.header-info').style.display = 'flex';
+    document.querySelector('.custom-audio-player').style.display = 'flex';
+  }
+
+  window.addEventListener('load', function() {
+    jingleAudio.play();
+    setTimeout(hidePreloader, 15000);
+  });
 </script>
 
+<!-- Стили прелоадера и кастомного плеера -->
+<style>
+  /* Фон градиента */
+  .gradient, .preloader {
+    background: linear-gradient(135deg, #1d2671, #c33764); /* Пример градиента */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 
-</body>
-</html>
+  /* Прелоадер */
+  .preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  /* Анимация текста прелоадера */
+  .preloader-content span {
+    font-family: "Georgia", serif;
+    font-size: 100px;
+    color: white;
+    animation: fadeInOut 15s forwards;
+  }
+
+  /* Анимация для появления и исчезновения */
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    33% { opacity: 1; }
+    66% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  /* Настройка кастомного аудиоплеера в одну линию */
+  .custom-audio-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+
+  .progress-container {
+    flex-grow: 1;
+    height: 5px;
+    background: #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: #1d2671;
+    width: 0;
+    transition: width 0.1s;
+  }
+</style>
+
+:ET

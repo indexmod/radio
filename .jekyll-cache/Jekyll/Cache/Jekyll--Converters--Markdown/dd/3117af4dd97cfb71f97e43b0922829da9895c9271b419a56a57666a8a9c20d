@@ -1,41 +1,4 @@
-  <!-- Макет: обложка  -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- Favicon and Icons -->
-<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/manifest.json">
-
-<!-- Browser Theme -->
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-
-  <!-- Отключение кэширования -->
- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
- <meta http-equiv="Pragma" content="no-cache">
- <meta http-equiv="Expires" content="0">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/assets/css/styles-cover.css">
-<title>Эфир Indexmod</title>
-</head>
-<body>
-  <!-- Основной градиентный фон -->
+I"�<!-- Основной градиентный фон -->
 <div class="gradient"></div>
 
 <!-- Контейнер с заголовком, мигающим кружком и временем -->
@@ -213,45 +176,6 @@
   
 </div>
 
-<!-- Прелоадер -->
-<div id="preloader" class="preloader">
-    <div class="loading-text">Нажать</div>
-</div>
-
-<!-- Аудиоплеер для джингла (скрыт) -->
-<audio id="audioPlayer" preload="auto" style="display: none;">
-    <source id="audioSource" src="/assets/audio/jingle.mp3" type="audio/mpeg" />
-    Ваш браузер не поддерживает аудио элемент.
-</audio>
-
-<script>
-    // Получаем элементы
-    const preloader = document.getElementById('preloader');
-    const loadingText = document.querySelector('.loading-text');
-    const audioPlayer = document.getElementById('audioPlayer');
-
-    // Событие для нажатия на экран
-    preloader.addEventListener('click', function () {
-        // Запускаем аудио джингл
-        audioPlayer.play();
-
-        // Меняем текст на "Загрузка"
-        loadingText.textContent = 'Загрузка';
-
-        // По окончании аудио показываем основное содержимое страницы
-        audioPlayer.onended = function () {
-            // Здесь можно добавить код для показа основного содержимого страницы
-            document.body.classList.remove('loading'); // Убираем класс загрузки
-            preloader.style.display = 'none'; // Скрываем прелоадер
-        };
-    });
-
-    // Ждем полной загрузки страницы
-    document.addEventListener('DOMContentLoaded', function () {
-        document.body.classList.add('loading'); // Добавляем класс загрузки
-    });
-</script>
-
 <!-- Подключение скриптов -->
 <script src="/assets/js/timeDisplay.js"></script>
 
@@ -268,6 +192,4 @@
     });
 </script>
 
-
-</body>
-</html>
+:ET
