@@ -2,10 +2,8 @@
 layout: cover
 title: Эфир Indexmod
 ---
-
 <!-- Основной градиентный фон -->
 <div class="gradient"></div>
-
 <!-- Контейнер с заголовком, мигающим кружком и временем -->
 <div class="header-info">
   <span>{{ site.title }}</span>
@@ -23,7 +21,7 @@ title: Эфир Indexmod
 </div>
 
 <!-- Кастомный аудио-плеер -->
-<div class="container">
+
   <div class="custom-audio-player">
     <button id="play-pause-btn">Звук</button>
     <div class="progress-container">
@@ -33,7 +31,7 @@ title: Эфир Indexmod
     <span style="color: black;">/</span>
     <span id="duration">0:00</span>
   </div>
-</div>
+
 
 <!-- Скрытая сетка программ -->
 <div id="programsContainer" class="programs-grid" style="display: none;">
