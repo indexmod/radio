@@ -43,8 +43,6 @@ title: Эфир Indexmod
   {% endfor %}
 </div>
 
-{% include preloader.html %}
-
 <!-- Подключение скриптов -->
 <script src="{{ site.baseurl }}/assets/js/timeDisplay.js"></script>
 <script src="{{ site.baseurl }}/assets/js/blinkCurrentHour.js"></script>
