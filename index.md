@@ -14,8 +14,8 @@ title: Эфир Indexmod
   <img src="/reload_icon.png" alt="Reload" style="cursor: pointer; margin-left: 5px; height: 21px;" onclick="location.reload()">
 </div>
 
-<!-- Скрытый аудио плеер (сделаем его видимым, но стилизуем) -->
-<div class="audio-container" style="visibility: hidden; height: 0;">
+<!-- Скрытый аудио плеер -->
+<div class="audio-container" style="display: none;">
   <audio id="audioPlayer">
     <source id="audioSource" src="" type="audio/mpeg">
     Ваш браузер не поддерживает аудио элемент.
@@ -23,15 +23,19 @@ title: Эфир Indexmod
 </div>
 
 <!-- Кастомный аудио-плеер -->
-<div class="custom-audio-player">
-  <button id="play-pause-btn">Звук</button>
-  <div class="progress-container">
-    <div class="progress-bar" id="progress-bar"></div>
+<div class="container">
+  <div class="custom-audio-player">
+    <button id="play-pause-btn">Звук</button>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <span id="current-time">0:00</span>
+    <span style="color: black;">/</span>
+    <span id="duration">0:00</span>
   </div>
-  <span id="current-time">0:00</span><span style="color: black;">/</span><span id="duration">0:00</span>
 </div>
 
-<!-- Сетка программ -->
+<!-- Скрытая сетка программ -->
 <div id="programsContainer" class="programs-grid" style="display: none;">
   {% assign mypages = site.html_pages | where: "type", "program" | sort: "start_time" %}
   {% for page in mypages %}
