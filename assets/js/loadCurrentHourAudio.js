@@ -10,21 +10,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentHour = new Date().getHours();
   const currentMinute = new Date().getMinutes();
 
-  // Поиск аудиофайла текущего часа
+  // Поиск ссылки на аудиофайл для текущего часа
   const audioLink = document.querySelector(`.audio-link-${currentHour}`);
 
   if (audioLink) {
-    audioSource.src = audioLink.href;
-    audioPlayer.load();
+    audioSource.src = audioLink.href; // Установка источника аудио
+    audioPlayer.load(); // Загрузка аудиофайла
 
-    // Обновление отображения времени после загрузки метаданных
+    // Устанавливаем время и продолжительность после загрузки метаданных
     audioPlayer.addEventListener('loadedmetadata', function () {
       if (audioPlayer.duration) {
         durationDisplay.textContent = formatTime(audioPlayer.duration);
 
-        // Устанавливаем текущее время на количество секунд, прошедших с начала текущего часа
+        // Устанавливаем прогрессбар на текущую минуту
         const secondsFromHourStart = currentMinute * 60;
-        audioPlayer.currentTime = Math.min(secondsFromHourStart, audioPlayer.duration); // Убедимся, что текущее время не превышает продолжительность аудио
+        audioPlayer.currentTime = Math.min(secondsFromHourStart, audioPlayer.duration);
+        updateProgress(); // Обновляем прогрессбар на нужное значение
       } else {
         durationDisplay.textContent = '0:00';
       }
@@ -49,11 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Обновление прогресса аудио
-  audioPlayer.addEventListener('timeupdate', function () {
+  audioPlayer.addEventListener('timeupdate', updateProgress);
+
+  // Функция для обновления прогресс-бара
+  function updateProgress() {
     const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
     progressBar.style.width = progress + '%';
     currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
-  });
+  }
 
   // Форматирование времени
   function formatTime(seconds) {

@@ -32,7 +32,7 @@ title: Эфир Indexmod
 </div>
 
 <!-- Сетка программ -->
-<div id="programsContainer" class="programs-grid">
+<div id="programsContainer" class="programs-grid" style="display: none;">
   {% assign mypages = site.html_pages | where: "type", "program" | sort: "start_time" %}
   {% for page in mypages %}
     <div class="program-card">
@@ -45,14 +45,4 @@ title: Эфир Indexmod
 
 <!-- Подключение скриптов -->
 <script src="{{ site.baseurl }}/assets/js/timeDisplay.js"></script>
-<script src="{{ site.baseurl }}/assets/js/blinkCurrentHour.js"></script>
 <script src="{{ site.baseurl }}/assets/js/loadCurrentHourAudio.js"></script>
-
-<!-- Скрипт для скрытия сетки программ -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Скрываем сетку программ
-        const programsContainer = document.getElementById('programsContainer');
-        programsContainer.style.display = 'none'; // Или используйте visibility: hidden; для сохранения места
-    });
-</script>

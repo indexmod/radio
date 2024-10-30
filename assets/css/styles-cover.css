@@ -263,3 +263,7 @@ a:hover {
     font-size: 20px;
     color: black;
 }
+
+#programsContainer {
+  display: none; /* Скрываем сетку программ */
+}
