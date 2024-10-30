@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (audioPlayer.duration) {
         durationDisplay.textContent = formatTime(audioPlayer.duration);
 
-        // Устанавливаем текущее время на текущее время в минутах
-        const totalSeconds = currentHour * 3600 + currentMinute * 60; // Полное количество секунд с начала дня
-        audioPlayer.currentTime = Math.min(totalSeconds, audioPlayer.duration); // Убедитесь, что текущее время не превышает продолжительность
+        // Устанавливаем текущее время на количество секунд, прошедших с начала текущего часа
+        const secondsFromHourStart = currentMinute * 60;
+        audioPlayer.currentTime = Math.min(secondsFromHourStart, audioPlayer.duration); // Убедимся, что текущее время не превышает продолжительность аудио
       } else {
         durationDisplay.textContent = '0:00';
       }
