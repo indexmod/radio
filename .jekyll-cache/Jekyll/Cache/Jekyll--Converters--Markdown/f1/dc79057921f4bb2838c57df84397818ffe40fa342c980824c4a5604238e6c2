@@ -1,4 +1,4 @@
-I"�<!-- Основной градиентный фон -->
+I"�<!-- Основной градиентный фон -->
 <div class="gradient"></div>
 <!-- Контейнер с заголовком, мигающим кружком и временем -->
 <div class="header-info">
@@ -17,8 +17,8 @@
 </div>
 
 <!-- Кастомный аудио-плеер -->
-<div class="container">
-  <div class="custom-audio-player">
+
+<div class="custom-audio-player">
     <button id="play-pause-btn">Звук</button>
     <div class="progress-container">
       <div class="progress-bar" id="progress-bar"></div>
@@ -27,7 +27,6 @@
     <span style="color: black;">/</span>
     <span id="duration">0:00</span>
   </div>
-</div>
 
 <!-- Скрытая сетка программ -->
 <div id="programsContainer" class="programs-grid" style="display: none;">
@@ -113,8 +112,8 @@
   
     <div class="program-card">
       <p class="program_time">13:00</p>
-      <a href="">Сежее мясо</a>
-      <a class="audio-link-13" href="/assets/audio/.mp3" style="display: none;">Audio</a>
+      <a href="myaso">Сежее мясо</a>
+      <a class="audio-link-13" href="/assets/audio/myaso.mp3" style="display: none;">Audio</a>
     </div>
   
     <div class="program-card">
